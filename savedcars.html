@@ -1,0 +1,327 @@
+
+<!-- form with 3 fields -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/jquery-ui.css" rel="stylesheet">
+    <!-- Bootstrap Icon CSS -->
+    <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
+    <!-- Fontawesome all CSS -->
+    <link href="assets/css/all.min.css" rel="stylesheet">
+    <!-- Animate CSS -->
+    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <!-- FancyBox CSS -->
+    <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+
+    <!-- Fontawesome CSS -->
+    <link href="assets/css/fontawesome.min.css" rel="stylesheet">
+    <!-- Swiper slider CSS -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!-- Slick slider CSS -->
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+    <!-- Magnific-popup CSS -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!-- BoxIcon  CSS -->
+    <link href="assets/css/boxicons.min.css" rel="stylesheet">
+    <!-- Select2  CSS -->
+    <link href="assets/css/nice-select.css" rel="stylesheet">
+    <!--  Style CSS  -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <!-- Title -->
+    <title>Drivco - Car Dealer HTML Template</title>
+    <link rel="icon" href="assets/img/sm-logo.svg" type="image/gif" sizes="20x20">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <style>
+      .header-bar,
+      .footer-bar {
+        background-color: #d32f2f;
+        height: 50px;
+      }
+      .navbar {
+        background-color: #ffc107;
+        height: 80px;
+        display: flex;
+        align-items: center;
+      }
+      .navbar-brand {
+        font-style: italic;
+        font-weight: bold;
+      }
+      .sidebar {
+        background-color: white;
+        color: black;
+        padding: 15px;
+      }
+      .sidebar .nav-link {
+        color: black;
+      }
+      .sidebar .nav-link.active {
+        background-color: #d32f2f;
+        color: white !important;
+      }
+      .footer {
+        background-color: #ffc107;
+        padding: 20px;
+        margin-top: 20px;
+      }
+      .form-control {
+        max-width: 600px;
+      }
+      .update-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .account-info {
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .form-label {
+        text-align: left;
+        display: inline-block;
+        width: 100%;
+        margin-left: 10px; /* Added margin to the left to align better with the input fields */
+      }
+
+      .form-control {
+        width: 100%;
+        max-width: 600px;
+        margin-top: 5px;
+      }
+
+      .mb-3 {
+        padding-left: 10px; /* Add padding to the left of each field to align with the label */
+      }
+      #biddingOptions {
+    display: none; /* Initially hidden */
+    overflow: hidden; /* Hide the overflow content */
+    height: 0; /* Start with zero height */
+    transition: height 0.3s ease-out; /* Smooth sliding transition */
+}
+
+#biddingOptions.show {
+    display: block;
+    height: auto; /* Allow content to expand */
+}
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll(".sidebar .nav-link");
+        links.forEach((link) => {
+          link.addEventListener("click", function () {
+            links.forEach((l) => l.classList.remove("active"));
+            this.classList.add("active");
+            document.getElementById("selected-option").textContent =
+              this.textContent;
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+
+    <!-- Top Bar -->
+<div class="top-bar" style="background-color: #B71C1C; padding: 10px 0;">
+    <div class="container d-flex justify-content-between align-items-center">
+        <!-- Left Side - Company Logo or Address Locator -->
+        <div class="company-logo text-white">
+            Address Locator
+        </div>
+        
+        <!-- Right Side - Call Us and Buttons -->
+        <div class="topbar-right d-flex align-items-center">
+            <div class="call text-white me-3">
+                Call Us: 1-888-999-00
+            </div>
+            
+            <!-- Sign-Up Buttons -->
+          
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" >
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4311 12.759C15.417 11.4291 16 9.78265 16 8C16 3.58169 12.4182 0 8 0C3.58169 0 0 3.58169 0 8C0 12.4182 3.58169 16 8 16C10.3181 16 12.4058 15.0141 13.867 13.4387C14.0673 13.2226 14.2556 12.9957 14.4311 12.759ZM13.9875 12C14.7533 10.8559 15.1999 9.48009 15.1999 8C15.1999 4.02355 11.9764 0.799983 7.99991 0.799983C4.02355 0.799983 0.799983 4.02355 0.799983 8C0.799983 9.48017 1.24658 10.8559 2.01245 12C2.97866 10.5566 4.45301 9.48194 6.17961 9.03214C5.34594 8.45444 4.79998 7.49102 4.79998 6.39995C4.79998 4.63266 6.23271 3.19993 8 3.19993C9.76729 3.19993 11.2 4.63266 11.2 6.39995C11.2 7.49093 10.654 8.45444 9.82039 9.03206C11.5469 9.48194 13.0213 10.5565 13.9875 12ZM13.4722 12.6793C12.3495 10.8331 10.3188 9.59997 8.00008 9.59997C5.68126 9.59997 3.65049 10.8331 2.52776 12.6794C3.84829 14.2222 5.80992 15.2 8 15.2C10.1901 15.2 12.1517 14.2222 13.4722 12.6793ZM8 8.79998C9.32551 8.79998 10.4 7.72554 10.4 6.39995C10.4 5.07444 9.32559 3.99992 8 3.99992C6.6744 3.99992 5.59997 5.07452 5.59997 6.40003C5.59997 7.72554 6.67449 8.79998 8 8.79998Z" />
+                    </svg>
+                </button>
+                <ol class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li class="drop "><a class="dropdown-item" href="myaccount.html">
+                        <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4311 12.759C15.417 11.4291 16 9.78265 16 8C16 3.58169 12.4182 0 8 0C3.58169 0 0 3.58169 0 8C0 12.4182 3.58169 16 8 16C10.3181 16 12.4058 15.0141 13.867 13.4387C14.0673 13.2226 14.2556 12.9957 14.4311 12.759ZM13.9875 12C14.7533 10.8559 15.1999 9.48009 15.1999 8C15.1999 4.02355 11.9764 0.799983 7.99991 0.799983C4.02355 0.799983 0.799983 4.02355 0.799983 8C0.799983 9.48017 1.24658 10.8559 2.01245 12C2.97866 10.5566 4.45301 9.48194 6.17961 9.03214C5.34594 8.45444 4.79998 7.49102 4.79998 6.39995C4.79998 4.63266 6.23271 3.19993 8 3.19993C9.76729 3.19993 11.2 4.63266 11.2 6.39995C11.2 7.49093 10.654 8.45444 9.82039 9.03206C11.5469 9.48194 13.0213 10.5565 13.9875 12ZM13.4722 12.6793C12.3495 10.8331 10.3188 9.59997 8.00008 9.59997C5.68126 9.59997 3.65049 10.8331 2.52776 12.6794C3.84829 14.2222 5.80992 15.2 8 15.2C10.1901 15.2 12.1517 14.2222 13.4722 12.6793ZM8 8.79998C9.32551 8.79998 10.4 7.72554 10.4 6.39995C10.4 5.07444 9.32559 3.99992 8 3.99992C6.6744 3.99992 5.59997 5.07452 5.59997 6.40003C5.59997 7.72554 6.67449 8.79998 8 8.79998Z" />
+                        </svg>
+                        My Account</a>
+                    </li>
+                    <li class="drop"><a class="dropdown-item" href="#">Appointments</a></li>
+                    <li class="drop"><a class="dropdown-item" href="#">Orders</a></li>
+                    <li class="drop"><a class="dropdown-item" href="#">Saved Cars</a></li>
+                    <li class="drop"><a class="dropdown-item" href="#">Bidding</a></li>
+                    <li class="drop"><a class="dropdown-item" href="#">Logout</a></li>
+                </ol>
+              </div>
+        </div>
+    </div>
+</div>
+
+<!-- Header Section -->
+
+<div class="main-menu" style="background-color: #FFC107;">
+<nav class="navbar navbar-expand-lg navbar-light" >
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">CARGURU</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li id="buy_a_car" class="nav-item active">
+                    <a class="nav-link" href="#">I want to Buy a Car</a>
+                </li>
+                <li id="sell_a_car" class="nav-item">
+                    <a class="nav-link" href="#">I want to Sell a Car</a>
+                </li>
+                <li id="other_services" class="nav-item">
+                    <a class="nav-link" href="#">Other Services</a>
+                </li>
+                <li id="about_us" class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li id="contact_us" class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</div>
+
+
+
+
+    <div class="container mt-4">
+      <div class="account-info">
+        My Account > <span id="selected-option">Saved Cars</span>
+      </div>
+      <div class="row">
+        <div class="col-md-3 sidebar">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link " href="myaccount.html">Settings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="appointments.html">Appointments</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="orders.html">Orders</a></li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Saved Cars</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="biddingLink">Bidding</a>
+                <ul class="nav flex-column ms-3" id="biddingOptions">
+                    <li class="nav-item">
+                        <a class="nav-link" href="sell.html">Sell</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="buy.html">Buy</a>
+                    </li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-9">
+            <p>@ CARSOME Taman Sutera (Skudai), Johor</p>
+            <div class="content-container content" id="ordersContent">
+                <div class="card" style="max-width: 300px;">
+                    
+                    <img style="max-width: 100%; height: auto; display: block; margin: 0 auto;" 
+                        src="https://b2c-cdn.carsome.my/cdn-cgi/image/format=auto,quality=50,width=1296/B2C/c821d037-93c0-4c8c-83e8-872bf41dc09b.jpg" alt="2021 Mazda 3">
+                    <div class="card-body">
+                        <h5 class="card-title">2021 Mazda 3 SKYACTIV-G High Plus 2.0</h5>
+                        <p class="text-danger"><strong>RM 133,800</strong></p>
+                        <p>RM 1,576/mo (9 Years Loan)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>      
+
+    </div>
+    <br><br>
+
+        <!-- Start Footer Section -->
+<footer class="footer bg-warning text-dark pt-4 pb-2">
+    <div class="container">
+        <div class="row">
+            <!-- Left Column: Company Info -->
+            <div class="col-lg-4 col-md-6 mb-3">
+                <h3><strong>CARGURU</strong></h3>
+                <p class="fst-italic">
+                    Carguru is transforming the used car market with a transparent live bidding platform 
+                    that connects buyers, sellers, and dealers for maximum value. Your car, your way—whether 
+                    buying, selling, or bidding, Carguru makes every step simple, transparent, and rewarding.
+                </p>
+            </div>
+
+            <!-- Middle Column: Services -->
+            <div class="col-lg-4 col-md-6 mb-3">
+                <h4 class="text-center"><strong>Our Services</strong></h4>
+                <ul class="list-unstyled text-lg-start text-center">
+                    <li>Buying Car</li>
+                    <li>Selling Car</li>
+                    <li>Financial Services</li>
+                    <li>Insurance</li>
+                    <li>Car Warranty</li>
+                    <li>Car Body Work</li>
+                </ul>
+            </div>
+
+            <!-- Right Column: About Carguru -->
+            <div class="col-lg-4 col-md-12 mb-3">
+                <h4 class="text-center"><strong>About Carguru</strong></h4>
+                <ul class="list-unstyled text-lg-start text-center">
+                    <li>About Carguru</li>
+                    <li>Contact Us</li>
+                    <li>Our Location</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Separate Red Bottom Bar -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12" style="height: 50px; background-color: red;"></div>
+    </div>
+</div>
+ 
+  </body>
+  <script>
+    document.getElementById('biddingLink').addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent default anchor click behavior
+    var biddingOptions = document.getElementById('biddingOptions');
+    
+    // Toggle 'show' class to slide in or out
+    if (biddingOptions.classList.contains('show')) {
+        biddingOptions.classList.remove('show');
+    } else {
+        biddingOptions.classList.add('show');
+    }
+});
+  </script>
+</html>
