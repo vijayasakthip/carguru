@@ -252,10 +252,10 @@
         <div class="col-lg-9">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-sm-6">
                         <button id="testDriveBtn" class="btn btn-outline btn-warning-outline active" style="background-color: #d32f2f; color: white;">Test Drive</button>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-sm-6">
                         <button id="inspectionBtn" class="btn btn-outline btn-warning-outline">Inspection</button>
                     </div>
                 </div>
@@ -265,7 +265,7 @@
         
                 <button class="btn btn-warning" id="testdrive">Book an appointment</button>
                 
-                <a href="inspection_appointment.html"><button class="btn btn-warning" id="inspection">Book an appointment</button></a>
+                <a href="inspection_appointment.html"><button class="btn btn-warning" id="inspection" style="display: none;">Book an appointment</button></a>
 
 
               
@@ -397,6 +397,12 @@
         document.getElementById('testDriveBtn').style.backgroundColor = '#d32f2f'; // Set background color
         document.getElementById('testDriveBtn').style.color = 'white'; // Set text color
         document.getElementById('testDriveMessage').style.display = 'block'; // Show Test Drive message
+        document.getElementById('testdrive').style.display = 'block'; // Show Test Drive message
+        document.getElementById('inspection').style.display = 'none'; // Show Test Drive message
+        
+
+
+        
     });
 
     document.getElementById('inspectionBtn').addEventListener('click', function() {
@@ -405,19 +411,26 @@
         document.getElementById('inspectionBtn').style.backgroundColor = '#d32f2f'; // Set background color
         document.getElementById('inspectionBtn').style.color = 'white'; // Set text color
         document.getElementById('inspectionMessage').style.display = 'block'; // Show Inspection message
+        document.getElementById('inspection').style.display = 'inline-block'; // Better for button-like appearance
+        document.getElementById('testdrive').style.display = 'none'; // Show Test Drive message
+        document.getElementById('appointmentRow').style.display = 'none';
     });
 </script>
 <script>
     // Get the button and the row
     const testDriveButton = document.getElementById('testdrive');
     const appointmentRow = document.getElementById('appointmentRow');
+    const testDriveMessage =document.getElementById('testDriveMessage');
 
     // Add a click event listener to the button
     testDriveButton.addEventListener('click', function() {
         // Toggle the display of the appointment row
         if (appointmentRow.style.display === 'none' || appointmentRow.style.display === '') {
             appointmentRow.style.display = 'flex'; // Show the row
+            testDriveButton.style.display = 'none'; // Hide the row
+            testDriveMessage.style.display = 'none'; // Hide the row
         } else {
+            
             appointmentRow.style.display = 'none'; // Hide the row
         }
     });
