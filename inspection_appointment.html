@@ -288,7 +288,7 @@
 
 
     <div class="container mt-4" style="text-align: left;">
-        <div class="account-info">
+        <div class="account-info" style="text-align: left;">
             My Account > <span id="selected-option">Appointments ></span> <span id="selected-option">Book Inspection appointment</span>
           </div>
       <div class="row">
@@ -462,44 +462,31 @@
     </div>
             </div>  
             <div id="graph" style="display: none;">
-            <div class="card p-3" style="background-color: #f8f9fa;">
+            <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Which Best Describes Your Car's Condition</h5>
-            
-                    <!-- Buttons row -->
-                    <div class="d-flex justify-content-between mb-3">
-                        <button type="button" class="btn btn-outline-primary condition-btn">Fair</button>
-                        <button type="button" class="btn btn-outline-primary condition-btn active">Good</button>
-                        <button type="button" class="btn btn-outline-primary condition-btn">Very Good</button>
-                        <button type="button" class="btn btn-outline-primary condition-btn">Excellent</button>
-                    </div>
-            
-                    <!-- Large Graph Below Buttons -->
-                    <div class="position-relative p-3">
-                        <!-- Graph Price Range Labels (Start and End) -->
-                       
+                    <div class="container">
+                        <h3>Which Best Describes Your Car's Condition?</h3>
+                        <div class="condition-selector">
+                            <button class="condition-btn" onclick="selectCondition('Fair', 3000, 3200)">Fair</button>
+                            <button class="condition-btn active" onclick="selectCondition('Good', 3436, 3685)">Good</button>
+                            <button class="condition-btn" onclick="selectCondition('Very Good', 3700, 3900)">Very Good</button>
+                            <button class="condition-btn" onclick="selectCondition('Excellent', 4000, 4200)">Excellent</button>
+                        </div>
                     
-                        <!-- Graph SVG -->
-                        <svg width="100%" height="120">
-                            <!-- Full X-axis Line -->
-                            <line x1="20" y1="100" x2="790" y2="100" stroke="#aaa" stroke-width="2"/>
-                        
-                            <!-- Rising Graph Line -->
-                            <polyline points="20,100 150,85 280,70 420,50 600,40 770,30" 
-                                stroke="#007bff" stroke-width="4" fill="none"/>
-                        
-                            <!-- Highlight on "Good" -->
-                            <circle cx="280" cy="70" r="10" fill="#007bff"/>
-                            <text x="220" y="45" font-size="14px" fill="#007bff" font-weight="bold">RM 3436 - RM 3685</text>
-                        
-                            <!-- Highlight on "Excellent" -->
-                            <circle cx="770" cy="30" r="8" fill="#007bff"/>
-                        </svg>
+                        <div class="graph">
+                            <div id="highlight" class="highlight">
+                                <div id="price-range" class="price-range">RM 3,436 - 3,685*</div>
+                            </div>
+                            <canvas id="priceGraph"></canvas>
+                        </div>
+                    <br>
+                    <br>
+                        <button class="final-price-btn">Book Inspection for Final Price</button>
                     </div>
-                    <!-- Booking button -->
-                    <button class="btn btn-warning w-100 mt-3">Book Inspection for Final Price</button>
                 </div>
             </div>
+          
+                
             
             <br>
             <div class="card">
@@ -526,24 +513,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <h3>Which Best Describes Your Car's Condition?</h3>
-                <div class="condition-selector">
-                    <button class="condition-btn" onclick="selectCondition('Fair', 3000, 3200)">Fair</button>
-                    <button class="condition-btn active" onclick="selectCondition('Good', 3436, 3685)">Good</button>
-                    <button class="condition-btn" onclick="selectCondition('Very Good', 3700, 3900)">Very Good</button>
-                    <button class="condition-btn" onclick="selectCondition('Excellent', 4000, 4200)">Excellent</button>
-                </div>
-            
-                <div class="graph">
-                    <div id="highlight" class="highlight">
-                        <div id="price-range" class="price-range">RM 3,436 - 3,685*</div>
-                    </div>
-                    <canvas id="priceGraph"></canvas>
-                </div>
-            
-                <button class="final-price-btn">Book Inspection for Final Price</button>
-            </div>
+           
         </div>
         </div>
       </div>
