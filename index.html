@@ -274,7 +274,7 @@
                     <div class="d-flex justify-content-center" style="display: flex; justify-content: center;">
                         <div class="row w-100 text-center" style="width: 100%; text-align: center;">
                             <div class="col-lg-6 d-flex justify-content-center" style="display: flex; justify-content: center;">
-                                <button class="btn btn-danger me-2" id="smsButton" style="width: 90%; border-radius: 8px;"><b>Via SMS</b></button>
+                                <button class="btn btn-outline-danger active me-2" id="smsButton" style="width: 90%; border-radius: 8px;"><b>Via SMS</b></button>
                             </div>
                             <div class="col-lg-6 d-flex justify-content-center" style="display: flex; justify-content: center;">
                                 <button class="btn btn-outline-danger" id="whatsappButton" style="width: 90%; border-radius: 8px;"><b>Via WhatsApp</b></button>
@@ -349,7 +349,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav1">
-                    <ol class="navbar-nav d-flex flex-row align-items-center gap-3 ms-auto" style="list-style: none; padding: 0; margin: 0;">
+                    <ol class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <span class="nav-link text-white">Call Us: 1-888-999-00</span>
                         </li>
@@ -1752,6 +1752,9 @@ document.addEventListener('click', function(event) {
         whatsappButton.addEventListener("click", function () {
             whatsappButton.classList.add("selected");
             smsButton.classList.remove("selected");
+            smsButton.classList.remove("active");  // Remove 'active' class when whatsappButton is clicked
+
+            
         });
     });
 </script>
