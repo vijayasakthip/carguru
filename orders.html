@@ -67,6 +67,10 @@
         color: black;
         padding: 15px;
       }
+      .nav-link{
+        font-weight: bold;
+
+      }
       .sidebar .nav-link {
         color: black;
       }
@@ -243,23 +247,199 @@
           </ul>
         </div>
 
-        <div class="col-md-6">
-            <div class="content-container content" id="ordersContent">
-                <div class="card" style="max-width: 300px;">
-                    <p>NO. 20241008330003</p>
+<div class="col-lg-9">
+
+
+          <div class="col-lg-6">
+        <div id="cardetails" style="display: block;">
+              <div class="content-container content" id="ordersContent">
+                  <div class="card" style="max-width: 300px;">
+                      <p>NO. 20241008330003</p>
+                      <img src="https://b2c-cdn.carsome.my/cdn-cgi/image/format=auto,quality=50,width=1296/B2C/c821d037-93c0-4c8c-83e8-872bf41dc09b.jpg" 
+                           alt="2015 Honda HR-V" onclick="toggleDetails()" >
+                      <div class="card-body">
+                          <h5 class="card-title">2015 Honda HR-V i-VTEC S 1.8</h5>
+                          <p class="text-danger"><strong>RM 43,800</strong></p>
+                          <a class="text-primary" href="#" onclick="toggleDetails()">Order Cancelled</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+   
+
+        <div id="cardetailsviewmore" style="display: none;">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                    <strong>Loan Purchase</strong>
+                    <span id="order-number">2024100830003</span>
+                  </div>
+                  <div class="car-info">
                     <img src="https://b2c-cdn.carsome.my/cdn-cgi/image/format=auto,quality=50,width=1296/B2C/c821d037-93c0-4c8c-83e8-872bf41dc09b.jpg" 
-                         alt="2015 Honda HR-V">
-                    <div class="card-body">
-                        <h5 class="card-title">2015 Honda HR-V i-VTEC S 1.8</h5>
-                        <p class="text-danger"><strong>RM 43,800</strong></p>
-                        <p class="text-primary">Order Cancelled</p>
-                    </div>
+                    alt="2015 Honda HR-V" style="max-width: 190px;">
+                    <strong>2015 Honda HR-V I-VTEC S 1.8</strong>
+                  </div>
                 </div>
+                <hr>
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                    <strong>Price Details</strong>
+                    
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="d-flex justify-content-between">
+                    <strong>Original Price</strong>
+                    <span id="order-number">RM 44,000</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                    <strong>Savings</strong>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="d-flex justify-content-between">
+                    <strong>Discount</strong>
+                    <span id="order-number">- RM 1,900</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                    <strong>Add-ons</strong>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="d-flex justify-content-between">
+                    <strong>Handling Fee (Incl 8% SST)</strong>
+                    <span id="order-number">+ RM 800</span>
+                  </div>
+                </div>
+                <hr>
+                <div class="row mb-3">
+                  <div class="d-flex justify-content-between">
+                    <strong>Grand Total</strong>
+                    <span id="order-number"> RM 43,800</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                    <strong class="alert-success text-success">Paid</strong>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                    <strong>Booking Fee</strong>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                    <strong class=" alert-warning text-warning">Pending payment</strong>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="d-flex justify-content-between">
+                    <strong>Remaining Balance</strong>
+                    <span id="order-number"> RM 43,800</span>
+                  </div>
+                </div>
+              </div>
             </div>
-      
+          </div>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                    <strong>Your Order</strong>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                    <strong>Order Cancelled</strong>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                    <p class="alert-success">The Order has been cancelled.Book this car again or view other cars we have in store.</p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                   <button class="btn btn-warning">Book this Car Again</button>
+                   <button class="btn btn-warning">View Other Cars</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <br>
+            <div class="card">
+              <div class="card-body">
+
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                    <strong>CARSOME Consultant</strong>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                    <strong>Order Cancelled</strong>
+                  </div>
+                </div>
+                <hr>
+
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                   <a><i class="bi bi-journal-richtext"></i>Contact Us</a>
+                   <a>1-800-82-3388 </a>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                   <a><i class="bi bi-journal-richtext"></i>CARSOME Seremban</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <br>
+            <div class="card">
+              <div class="card-body">
+
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                    <strong>Delivery Details</strong>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                 <p>Delivery Preference</p>
+                 <p>Self Pickup</p>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
+      </div>
     </div>
+  </div>
 
         <!-- Start Footer Section -->
 <footer class="footer bg-warning text-dark pt-4 pb-2">
@@ -277,7 +457,7 @@
 
             <!-- Middle Column: Services -->
             <div class="col-lg-4 col-md-6 mb-3">
-                <h4 class="text-center"><strong>Our Services</strong></h4>
+                <h4><strong>Our Services</strong></h4>
                 <ul class="list-unstyled text-lg-start text-center">
                     <li>Buying Car</li>
                     <li>Selling Car</li>
@@ -290,7 +470,7 @@
 
             <!-- Right Column: About Carguru -->
             <div class="col-lg-4 col-md-12 mb-3">
-                <h4 class="text-center"><strong>About Carguru</strong></h4>
+                <h4><strong>About Carguru</strong></h4>
                 <ul class="list-unstyled text-lg-start text-center">
                     <li>About Carguru</li>
                     <li>Contact Us</li>
@@ -322,4 +502,10 @@
     }
 });
   </script>
+  <script>
+    function toggleDetails() {
+        document.getElementById('cardetails').style.display = 'none';
+        document.getElementById('cardetailsviewmore').style.display = 'block';
+    }
+</script>
 </html>
