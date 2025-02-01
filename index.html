@@ -229,7 +229,40 @@
         margin-top: -10px;  /* Final adjustment for very small screens */
     }
 }
-  
+.signinwithgoogle{
+    width: 60%;
+    border-radius: 8px; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 425px) {
+    .signinwithgoogle{
+    width: 100%;
+    border-radius: 8px; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+}
+@media (max-width: 375px) {
+    .signinwithgoogle{
+    width: 100%;
+    border-radius: 8px; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+}
+@media (max-width: 320px) {
+    .signinwithgoogle{
+    width: 100%;
+    border-radius: 8px; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+}
     </style>
 </head>
 
@@ -273,10 +306,10 @@
                     <br>
                     <div class="d-flex justify-content-center" style="display: flex; justify-content: center;">
                         <div class="row w-100 text-center" style="width: 100%; text-align: center;">
-                            <div class="col-lg-6 d-flex justify-content-center" style="display: flex; justify-content: center;">
+                            <div class="col-sm-6 d-flex justify-content-center" style="display: flex; justify-content: center;">
                                 <button class="btn btn-outline-danger active me-2" id="smsButton" style="width: 90%; border-radius: 8px;"><b>Via SMS</b></button>
                             </div>
-                            <div class="col-lg-6 d-flex justify-content-center" style="display: flex; justify-content: center;">
+                            <div class="col-sm-6 d-flex justify-content-center" style="display: flex; justify-content: center;">
                                 <button class="btn btn-outline-danger" id="whatsappButton" style="width: 90%; border-radius: 8px;"><b>Via WhatsApp</b></button>
                             </div>
                         </div>
@@ -300,7 +333,7 @@
                                 <p>or</p>
                             </div>
                             <div class="d-flex justify-content-center mt-3" style="display: flex; justify-content: center; margin-top: 15px;">
-                                <button class="btn btn-outline-secondary" style="width: 50%; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                <button class="btn btn-outline-secondary signinwithgoogle">
                                     <span class="google-icon me-3"></span>Sign in with Google
                                 </button>
                             </div>
