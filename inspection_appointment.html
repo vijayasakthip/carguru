@@ -67,6 +67,10 @@
           color: black;
           padding: 15px;
         }
+        .nav-link{
+        font-weight: bold;
+
+      }
         .sidebar .nav-link {
           color: black;
         }
@@ -123,7 +127,64 @@
     .btn:hover {
         background-color: #f0f0f0;
     }
+    .container {
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
 
+    .condition-selector {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: 10px 0;
+    }
+
+    .condition-btn {
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+        background-color: #f8f8f8;
+        cursor: pointer;
+    }
+
+    .condition-btn.active {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .graph {
+        position: relative;
+        height: 200px;
+        margin: 20px auto;
+        width: 90%;
+    }
+
+    .highlight {
+        position: absolute;
+        top: 20px;
+        width: 25%;
+        height: 180px;
+        background: linear-gradient(to bottom, rgba(0, 123, 255, 0.5), transparent);
+        left: 25%;
+    }
+
+    .price-range {
+        background-color: #007bff;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .final-price-btn {
+        background-color: #ffc107;
+        border: none;
+        padding: 15px 20px;
+        cursor: pointer;
+        font-weight: bold;
+    }
 
       </style>
     <script>
@@ -465,6 +526,24 @@
                     </div>
                 </div>
             </div>
+            <div class="container">
+                <h3>Which Best Describes Your Car's Condition?</h3>
+                <div class="condition-selector">
+                    <button class="condition-btn" onclick="selectCondition('Fair', 3000, 3200)">Fair</button>
+                    <button class="condition-btn active" onclick="selectCondition('Good', 3436, 3685)">Good</button>
+                    <button class="condition-btn" onclick="selectCondition('Very Good', 3700, 3900)">Very Good</button>
+                    <button class="condition-btn" onclick="selectCondition('Excellent', 4000, 4200)">Excellent</button>
+                </div>
+            
+                <div class="graph">
+                    <div id="highlight" class="highlight">
+                        <div id="price-range" class="price-range">RM 3,436 - 3,685*</div>
+                    </div>
+                    <canvas id="priceGraph"></canvas>
+                </div>
+            
+                <button class="final-price-btn">Book Inspection for Final Price</button>
+            </div>
         </div>
         </div>
       </div>
@@ -588,4 +667,19 @@
         document.getElementById("graph").style.display = "block"; // Show graph
     }
 </script>
+<script>
+    function selectCondition(condition, minPrice, maxPrice) {
+        document.querySelectorAll('.condition-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        const highlight = document.getElementById('highlight');
+        const priceRange = document.getElementById('price-range');
+
+        const conditions = ['Fair', 'Good', 'Very Good', 'Excellent'];
+        const index = conditions.indexOf(condition);
+
+        highlight.style.left = `${index * 25}%`;
+        priceRange.textContent = `RM ${minPrice.toLocaleString()} - ${maxPrice.toLocaleString()}*`;
+    }
+</script> 
 </html>
