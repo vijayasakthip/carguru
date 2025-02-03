@@ -987,8 +987,27 @@ p {
 }
 @media (max-width: 991px) {
   .top-bar {
-    display: none;
-    visibility: hidden;
+    padding: 15px 3%;
+  }
+}
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 15px 3%;
+  }
+}
+@media (max-width: 425px) {
+  .top-bar {
+    padding: 25px 3%;
+  }
+}
+@media (max-width: 375px) {
+  .top-bar {
+    padding: 15px 3%;
+  }
+}
+@media (max-width: 320px) {
+  .top-bar {
+    padding: 15px 3%;
   }
 }
 .top-bar .search-area {
