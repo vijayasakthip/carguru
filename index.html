@@ -38,9 +38,10 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <!-- Title -->
-    <title>Drivco - Car Dealer HTML Template</title>
+    <title>CARGURU</title>
     <link rel="icon" href="assets/img/sm-logo.svg" type="image/gif" sizes="20x20">
     <style>
+       
         footer {
     background: #FFC107; /* Yellow background */
     color: black;
@@ -171,6 +172,7 @@
     color: white !important; /* Ensure text color stays white */
     background-color: #dc3545 !important; /* Red background */
 }
+
 /* On screens smaller than 425px (mobile devices) */
 @media (max-width: 425px) {
     #heading-container {
@@ -263,6 +265,74 @@
     justify-content: center;
 }
 }
+.scroll-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.categories {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    width: calc(100% - 40px);
+}
+
+.categories::-webkit-scrollbar {
+    display: none;
+}
+
+.category {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.category:hover {
+    background-color: #ccc;
+}
+
+.category.active {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+.scroll-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    font-size: 16px;
+}
+.cardetails {
+    color: #dc3545; /* Set the normal text color */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition effect */
+}
+
+.cardetails:hover {
+    color: #007bff; /* Change the color on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+
     </style>
 </head>
 
@@ -382,7 +452,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav1">
-                    <ol class="navbar-nav ms-auto" style="z-index: 4;">
+                    <ol class="navbar-nav ms-auto d-flex align-items-center" style="z-index: 4;">
                         <li class="nav-item">
                             <span class="nav-link text-white">Call Us: 1-888-999-00</span>
                         </li>
@@ -453,16 +523,17 @@
             <div class="col-xxl-12 col-xl-12 d-flex align-items-center wow fadeInUp" data-wow-delay="200ms">
                 <div class="banner-content">
                     <!-- Bootstrap Carousel -->
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
                         <!-- Indicators (optional, can be removed) -->
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
                         </div>
                         
                         <!-- Slides -->
-                        <div class="carousel-inner">
+                        <div class="carousel-inner" style="height: 600px;">
                             <div class="carousel-item active">
                                 <img src="assets/img/bannerimages/1.jpg" class="d-block w-100 h-100" alt="Slide 1">
                             </div>
@@ -472,6 +543,7 @@
                             <div class="carousel-item">
                                 <img src="assets/img/bannerimages/1.jpg" class="d-block w-100 h-100" alt="Slide 3">
                             </div>
+                         
                         </div>
 
                         <!-- Controls -->
@@ -487,8 +559,6 @@
                 </div>
             </div>
         </div>
-   
-
 <!-- End Banner section -->
 
 <!-- Start Search Card -->
@@ -552,84 +622,34 @@
                     </div>
                 </div>
             </div>
+            <!-- brand name scroll -->
             <div class="row">
                 <div class="col-lg-12">
-    <!-- Start of Nav Tabs -->
-<ul class="nav nav-pills justify-content-center" id="myTab6" role="tablist">
-    <li class="nav-item" role="presentation">
-        <a class="nav-link active rounded-pill me-2 bg-dark text-white" id="electric-tab" data-bs-toggle="tab"
-            data-bs-target="#electric" href="#electric" role="tab" aria-controls="electric" aria-selected="true">
-            Electric
-        </a>
-    </li>
-    <li class="nav-item" role="presentation">
-        <a class="nav-link rounded-pill me-2 bg-light text-dark" id="suv-tab" data-bs-toggle="tab" data-bs-target="#suv"
-            href="#suv" role="tab" aria-controls="suv" aria-selected="false">
-            SUV
-        </a>
-    </li>
-    <li class="nav-item" role="presentation">
-        <a class="nav-link rounded-pill me-2 bg-light text-dark" id="sedan-tab" data-bs-toggle="tab" data-bs-target="#sedan"
-            href="#sedan" role="tab" aria-controls="sedan" aria-selected="false">
-            Sedan
-        </a>
-    </li>
-    <li class="nav-item" role="presentation">
-        <a class="nav-link rounded-pill me-2 bg-light text-dark" id="pickup-truck-tab" data-bs-toggle="tab" data-bs-target="#pickup-truck"
-            href="#pickup-truck" role="tab" aria-controls="pickup-truck" aria-selected="false">
-            Pickup Truck
-        </a>
-    </li>
-    <li class="nav-item" role="presentation">
-        <a class="nav-link rounded-pill me-2 bg-light text-dark" id="luxury-tab" data-bs-toggle="tab" data-bs-target="#luxury"
-            href="#luxury" role="tab" aria-controls="luxury" aria-selected="false">
-            Luxury
-        </a>
-    </li>
-    <li class="nav-item" role="presentation">
-        <a class="nav-link rounded-pill me-2 bg-light text-dark" id="crossover-tab" data-bs-toggle="tab" data-bs-target="#crossover"
-            href="#crossover" role="tab" aria-controls="crossover" aria-selected="false">
-            Crossover
-        </a>
-    </li>
-    <li class="nav-item" role="presentation">
-        <a class="nav-link rounded-pill me-2 bg-light text-dark" id="hybrid-tab" data-bs-toggle="tab" data-bs-target="#hybrid"
-            href="#hybrid" role="tab" aria-controls="hybrid" aria-selected="false">
-            Hybrid
-        </a>
-    </li>
-    <li class="nav-item" role="presentation">
-        <a class="nav-link rounded-pill me-2 bg-light text-dark" id="diesel-tab" data-bs-toggle="tab" data-bs-target="#diesel"
-            href="#diesel" role="tab" aria-controls="diesel" aria-selected="false">
-            Diesel
-        </a>
-    </li>
-    <li class="nav-item" role="presentation">
-        <a class="nav-link rounded-pill me-2 bg-light text-dark" id="coupe-tab" data-bs-toggle="tab" data-bs-target="#coupe"
-            href="#coupe" role="tab" aria-controls="coupe" aria-selected="false">
-            Coupe
-        </a>
-    </li>
-    <li class="nav-item" role="presentation">
-        <a class="nav-link rounded-pill me-2 bg-light text-dark" id="hatchback-tab" data-bs-toggle="tab" data-bs-target="#hatchback"
-            href="#hatchback" role="tab" aria-controls="hatchback" aria-selected="false">
-            Hatchback
-        </a>
-    </li>
-    <li class="nav-item" role="presentation">
-        <a class="nav-link rounded-pill me-2 bg-light text-dark" id="wagon-tab" data-bs-toggle="tab" data-bs-target="#wagon"
-            href="#wagon" role="tab" aria-controls="wagon" aria-selected="false">
-            Wagon
-        </a>
-    </li>
-    <li class="nav-item" role="presentation">
-        <a class="nav-link rounded-pill me-2 bg-light text-dark" id="convertible-tab" data-bs-toggle="tab" data-bs-target="#convertible"
-            href="#convertible" role="tab" aria-controls="convertible" aria-selected="false">
-            Convertible
-        </a>
-    </li>
-</ul>
-<!-- End of Nav Tabs -->
+
+
+<div class="scroll-container">
+    
+    <div class="categories" id="categories">
+        <button class="category active rounded-pill">Electric</button>
+        <button class="category rounded-pill">SUV</button>
+        <button class="category rounded-pill">Sedan</button>
+        <button class="category rounded-pill">Pickup Truck</button>
+        <button class="category rounded-pill">Luxury</button>
+        <button class="category rounded-pill">Crossover</button>
+        <button class="category rounded-pill">Hybrid</button>
+        <button class="category rounded-pill">Diesel</button>
+        <button class="category rounded-pill">Coupe</button>
+        <button class="category rounded-pill">Hatchback</button>
+        <button class="category rounded-pill">Wagon</button>
+        <button class="category rounded-pill">Convertible</button>
+    </div>
+
+    <button class="scroll-btn ms-2" id="scroll-btn">➜</button>
+
+</div>
+
+<!-- brand name scroll -->
+
 
 <!-- Sidebar -->
 
@@ -697,13 +717,13 @@
                         </div>
                     </div>
                     <div class="product-content">
-                        <h5><a href="car-deatils.html">Mercedes-Benz C-Class-2023</a></h5>
+                        <h5 class="cardetails"><a href="car.html">Mercedes-Benz C-Class-2023</a></h5>
                         <div class="price-location">
                             <div class="price">
                                 <strong>$7,656.00</strong>
                             </div>
                             <div class="location">
-                                <a href="#"><i class="bi bi-geo-alt"></i> Panama City</a>
+                                <a href="#" class="cardetails"><i class="bi bi-geo-alt"></i> Panama City</a>
                             </div>
                         </div>
                         <ul class="features">
@@ -766,7 +786,7 @@
                             </li>
                         </ul>
                         <div class="content-btm">
-                            <a class="view-btn2" href="car-deatils.html">
+                            <a class="view-btn2" href="car.html">
                                 <svg width="35" height="21" viewBox="0 0 35 21"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -782,7 +802,7 @@
                                 View Details
                             </a>
                             <div class="brand">
-                                <a href="single-brand-category.html">
+                                <a href="car.html">
                                     <img src="assets/img/home1/icon/mercedes-01.svg" alt="image">
                                 </a>
                             </div>
@@ -837,7 +857,7 @@
                         </div>
                     </div>
                     <div class="product-content">
-                        <h5><a href="car-deatils.html">Tesla Model S-2023</a></h5>
+                        <h5><a href="car.html">Tesla Model S-2023</a></h5>
                         <div class="price-location">
                             <div class="price">
                                 <strong>$55,321.00</strong>
@@ -906,7 +926,7 @@
                             </li>
                         </ul>
                         <div class="content-btm">
-                            <a class="view-btn2" href="car-deatils.html">
+                            <a class="view-btn2" href="car.html">
                                 <svg width="35" height="21" viewBox="0 0 35 21"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -922,7 +942,7 @@
                                 View Details
                             </a>
                             <div class="brand">
-                                <a href="single-brand-category.html">
+                                <a href="car.html">
                                     <img src="assets/img/home1/icon/tesla-01.svg" alt="image">
                                 </a>
                             </div>
@@ -977,7 +997,7 @@
                         </div>
                     </div>
                     <div class="product-content">
-                        <h5><a href="car-deatils.html">Cadillac Escalade-2023</a></h5>
+                        <h5><a href="car.html">Cadillac Escalade-2023</a></h5>
                         <div class="price-location">
                             <div class="price">
                                 <strong>$27,321.00</strong>
@@ -1046,7 +1066,7 @@
                             </li>
                         </ul>
                         <div class="content-btm">
-                            <a class="view-btn2" href="car-deatils.html">
+                            <a class="view-btn2" href="car.html">
                                 <svg width="35" height="21" viewBox="0 0 35 21"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -1062,7 +1082,7 @@
                                 View Details
                             </a>
                             <div class="brand">
-                                <a href="single-brand-category.html">
+                                <a href="car.html">
                                     <img src="assets/img/home1/icon/toyota-01.svg" alt="image">
                                 </a>
                             </div>
@@ -1120,7 +1140,7 @@
                         </div>
                     </div>
                     <div class="product-content">
-                        <h5><a href="car-deatils.html">Hyundai Sonata C-Class-2022</a></h5>
+                        <h5><a href="car.html">Hyundai Sonata C-Class-2022</a></h5>
                         <div class="price-location">
                             <div class="price">
                                 <strong>$24,321.00</strong>
@@ -1189,7 +1209,7 @@
                             </li>
                         </ul>
                         <div class="content-btm">
-                            <a class="view-btn2" href="car-deatils.html">
+                            <a class="view-btn2" href="car.html">
                                 <svg width="35" height="21" viewBox="0 0 35 21"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -1205,7 +1225,7 @@
                                 View Details
                             </a>
                             <div class="brand">
-                                <a href="single-brand-category.html">
+                                <a href="car.html">
                                     <img src="assets/img/home1/icon/hyundai-01.svg" alt="image">
                                 </a>
                             </div>
@@ -1260,7 +1280,7 @@
                         </div>
                     </div>
                     <div class="product-content">
-                        <h5><a href="car-deatils.html">Jeep Grand Cherokee-2023</a></h5>
+                        <h5><a href="car.html">Jeep Grand Cherokee-2023</a></h5>
                         <div class="price-location">
                             <div class="price">
                                 <strong>$25,321.00</strong>
@@ -1329,7 +1349,7 @@
                             </li>
                         </ul>
                         <div class="content-btm">
-                            <a class="view-btn2" href="car-deatils.html">
+                            <a class="view-btn2" href="car.html">
                                 <svg width="35" height="21" viewBox="0 0 35 21"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -1345,7 +1365,7 @@
                                 View Details
                             </a>
                             <div class="brand">
-                                <a href="single-brand-category.html">
+                                <a href="car.html">
                                     <img src="assets/img/home1/icon/jeep-01.svg" alt="image">
                                 </a>
                             </div>
@@ -1400,7 +1420,7 @@
                         </div>
                     </div>
                     <div class="product-content">
-                        <h5><a href="car-deatils.html">BMW 3 Series Class-2022</a></h5>
+                        <h5><a href="car.html">BMW 3 Series Class-2022</a></h5>
                         <div class="price-location">
                             <div class="price">
                                 <strong>$66,321.00</strong>
@@ -1469,7 +1489,7 @@
                             </li>
                         </ul>
                         <div class="content-btm">
-                            <a class="view-btn2" href="car-deatils.html">
+                            <a class="view-btn2" href="car.html">
                                 <svg width="35" height="21" viewBox="0 0 35 21"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -1485,7 +1505,7 @@
                                 View Details
                             </a>
                             <div class="brand">
-                                <a href="single-brand-category.html">
+                                <a href="car.html">
                                     <img src="assets/img/home1/icon/bmw-10.svg" alt="image">
                                 </a>
                             </div>
@@ -1790,6 +1810,25 @@ document.addEventListener('click', function(event) {
             
         });
     });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const categories = document.getElementById("categories");
+    const scrollBtn = document.getElementById("scroll-btn");
+
+    scrollBtn.addEventListener("click", function () {
+        categories.scrollBy({ left: 200, behavior: "smooth" });
+    });
+
+    // Active button change on click
+    document.querySelectorAll(".category").forEach(button => {
+        button.addEventListener("click", function () {
+            document.querySelectorAll(".category").forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+        });
+    });
+});
+
 </script>
 <!-- JavaScript to Handle Modal Toggle -->
 </body>
