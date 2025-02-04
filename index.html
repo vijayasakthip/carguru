@@ -334,7 +334,63 @@
 .navcar:hover {
     color: white !important; /* White text color on hover */
 }
+.offer-badge {
+    position: absolute;
+    top: 0px; /* Adjust as needed */
+    right: -2px; /* Adjust as needed */
+    background-color: yellow;
+    color: blue;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  
+    border-bottom-left-radius: 15px; /* Rounded bottom-right corner */
 
+    font-size: 14px;
+    z-index: 10;
+}
+.offer-badge1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #6c757d; /* Gray background */
+    color: white;              /* White text */
+    padding: 5px 15px;         /* Adjust padding for better spacing */
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom-left-radius: 15px; /* Rounded bottom-right corner */
+
+    display: flex;
+    align-items: center;
+    gap: 5px;                  /* Space between icon and text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    z-index: 10;
+}
+
+/* Icon Styling (if needed) */
+.offer-badge1 i {
+    font-size: 16px; /* Adjust icon size */
+}
+.car-type .card-body {
+    padding: 10px;
+}
+
+.car-info {
+    display: flex;
+    align-items: center; /* Aligns image and text vertically in the center */
+}
+
+.car-image {
+    max-width: 25px;
+    margin-right: 10px; /* Space between the image and the text */
+}
+
+.car-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #424242;
+}
     </style>
 </head>
 
@@ -704,16 +760,24 @@
                         <div class="swiper product-img-slider">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
+                                    <div class="offer-badge">RM 1,900 OFF</div>
                                     <img src="assets/img/home1/product-img-5.png" alt="image">
+                                    <img src="assets/img/bannerimages/offer.jpg" alt="" style="width: 100%;height: auto;margin-bottom: 15px;bottom: 10px;position: relative;">
                                 </div>
                                 <div class="swiper-slide">
+                                    <div class="offer-badge">RM 1,900 OFF</div>
                                     <img src="assets/img/home1/product-img-5.png" alt="image">
+                                    <img src="assets/img/bannerimages/offer.jpg" alt="" style="width: 100%;height: auto;margin-bottom: 15px;bottom: 10px;position: relative;">
                                 </div>
                                 <div class="swiper-slide">
+                                    <div class="offer-badge">RM 1,900 OFF</div>
                                     <img src="assets/img/home1/product-img-5.png" alt="image">
+                                    <img src="assets/img/bannerimages/offer.jpg" alt="" style="width: 100%;height: auto;margin-bottom: 15px;bottom: 10px;position: relative;">
                                 </div>
                                 <div class="swiper-slide">
+                                    <div class="offer-badge">RM 1,900 OFF</div>
                                     <img src="assets/img/home1/product-img-5.png" alt="image">
+                                    <img src="assets/img/bannerimages/offer.jpg" alt="" style="width: 100%;height: auto;margin-bottom: 15px;bottom: 10px;position: relative;">
                                 </div>
                             </div>
                         </div>
@@ -722,12 +786,24 @@
                         <h5 class="cardetails"><a href="car.html">Mercedes-Benz C-Class-2023</a></h5>
                         <div class="price-location">
                             <div class="price">
-                                <strong>$7,656.00</strong>
+                                <strong class="text-danger"><small>RM</small> 37,000 </strong>
                             </div>
                             <div class="location">
                                 <a href="#" class="cardetails"><i class="bi bi-geo-alt"></i> Panama City</a>
                             </div>
+                           
                         </div>
+                        <div class="car-type">
+                            <div class="card" style="background-color: lightyellow;width: auto;">
+                                <div class="card-body">
+                                    <div class="car-info">
+                                        <img src="assets/img/bannerimages/family.png" alt="" class="car-image">
+                                        <span class="car-label">Compact SUV</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
                         <ul class="features">
                             <li>
                                 <svg width="13" height="13" viewBox="0 0 13 13"
@@ -744,7 +820,7 @@
                                             d="M7.96853 3.64648C7.92956 3.63086 7.8879 3.62307 7.84592 3.62356C7.80394 3.62404 7.76247 3.63279 7.72387 3.64931C7.68528 3.66583 7.65031 3.68979 7.62098 3.71982C7.59165 3.74986 7.56852 3.78537 7.55292 3.82435L6.62915 6.13025C6.58625 6.12537 6.54313 6.12278 6.49996 6.12249C6.05003 6.12249 5.64362 6.37171 5.43924 6.77288C5.22562 7.19225 5.28035 7.69332 5.58553 8.11316C5.61729 8.15668 5.65563 8.19499 5.69916 8.22675C5.9471 8.407 6.22402 8.50226 6.49996 8.50226C6.94989 8.50226 7.35634 8.25305 7.56067 7.85188C7.7743 7.43251 7.71957 6.93148 7.4146 6.51194C7.3828 6.46827 7.34439 6.42982 7.30076 6.39797C7.27754 6.38137 7.25388 6.36541 7.22979 6.3501L8.1464 4.06206C8.17791 3.98336 8.17688 3.89537 8.14352 3.81744C8.11016 3.73951 8.04722 3.67801 7.96853 3.64648ZM6.99093 7.56166C6.94504 7.65244 6.87483 7.72868 6.78812 7.78187C6.70142 7.83506 6.60163 7.8631 6.49992 7.86287C6.36335 7.86287 6.22589 7.81518 6.0912 7.72107C5.93776 7.50075 5.90763 7.26189 6.00894 7.06306C6.05482 6.97227 6.12504 6.89602 6.21175 6.84283C6.29845 6.78964 6.39824 6.7616 6.49996 6.76184C6.56637 6.76184 6.63294 6.77335 6.69935 6.79572C6.70152 6.79662 6.70353 6.79777 6.70574 6.79867C6.71273 6.80144 6.71976 6.80369 6.7268 6.80595C6.79115 6.83099 6.85221 6.86378 6.90863 6.9036C7.06203 7.12392 7.0922 7.36282 6.99093 7.56166Z" />
                                     </g>
                                 </svg>
-                                2500 miles
+                                127,474 KM
                             </li>
                             <li>
                                 <svg width="13" height="13" viewBox="0 0 13 13"
@@ -844,30 +920,56 @@
                         <div class="swiper product-img-slider">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="assets/img/home1/product-img-6.png" alt="image">
+                                    <div class="product-card">
+                                        <div class="offer-badge1"><i class="bi bi-lock"></i> Purchase Pending</div>
+                                        <img src="assets/img/home1/product-img-6.png" alt="image">
+                                    </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="assets/img/home1/product-img-6.png" alt="image">
+                                    <div class="product-card">   
+                                        <div class="offer-badge1"><i class="bi bi-lock"></i> Purchase Pending</div>
+                                        <img src="assets/img/home1/product-img-6.png" alt="image">
+                                    </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="assets/img/home1/product-img-6.png" alt="image">
+                                    <div class="product-card">  
+                                        <div class="offer-badge1"><i class="bi bi-lock"></i> Purchase Pending</div>
+                                        <img src="assets/img/home1/product-img-6.png" alt="image">
+                                    </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="assets/img/home1/product-img-6.png" alt="image">
+                                    <div class="product-card">
+                                        <div class="offer-badge1"><i class="bi bi-lock"></i> Purchase Pending</div>
+                                        <img src="assets/img/home1/product-img-6.png" alt="image">
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <br>
                     </div>
                     <div class="product-content">
                         <h5><a href="car.html">Tesla Model S-2023</a></h5>
                         <div class="price-location">
                             <div class="price">
-                                <strong>$55,321.00</strong>
+                                <strong class="text-danger"><small>RM</small> 113,000 </strong>
+
                             </div>
                             <div class="location">
                                 <a href="#"><i class="bi bi-geo-alt"></i> Melbourne City</a>
                             </div>
+                           
                         </div>
+                        <div class="car-type">
+                            <div class="card" style="background-color: lightyellow;">
+                                <div class="card-body">
+                                    <div class="car-info">
+                                        <img src="assets/img/bannerimages/diamond.png" alt="" class="car-image">
+                                        <span class="car-label">Luxury</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
                         <ul class="features">
                             <li>
                                 <svg width="13" height="13" viewBox="0 0 13 13"
@@ -884,7 +986,7 @@
                                             d="M7.96853 3.64648C7.92956 3.63086 7.8879 3.62307 7.84592 3.62356C7.80394 3.62404 7.76247 3.63279 7.72387 3.64931C7.68528 3.66583 7.65031 3.68979 7.62098 3.71982C7.59165 3.74986 7.56852 3.78537 7.55292 3.82435L6.62915 6.13025C6.58625 6.12537 6.54313 6.12278 6.49996 6.12249C6.05003 6.12249 5.64362 6.37171 5.43924 6.77288C5.22562 7.19225 5.28035 7.69332 5.58553 8.11316C5.61729 8.15668 5.65563 8.19499 5.69916 8.22675C5.9471 8.407 6.22402 8.50226 6.49996 8.50226C6.94989 8.50226 7.35634 8.25305 7.56067 7.85188C7.7743 7.43251 7.71957 6.93148 7.4146 6.51194C7.3828 6.46827 7.34439 6.42982 7.30076 6.39797C7.27754 6.38137 7.25388 6.36541 7.22979 6.3501L8.1464 4.06206C8.17791 3.98336 8.17688 3.89537 8.14352 3.81744C8.11016 3.73951 8.04722 3.67801 7.96853 3.64648ZM6.99093 7.56166C6.94504 7.65244 6.87483 7.72868 6.78812 7.78187C6.70142 7.83506 6.60163 7.8631 6.49992 7.86287C6.36335 7.86287 6.22589 7.81518 6.0912 7.72107C5.93776 7.50075 5.90763 7.26189 6.00894 7.06306C6.05482 6.97227 6.12504 6.89602 6.21175 6.84283C6.29845 6.78964 6.39824 6.7616 6.49996 6.76184C6.56637 6.76184 6.63294 6.77335 6.69935 6.79572C6.70152 6.79662 6.70353 6.79777 6.70574 6.79867C6.71273 6.80144 6.71976 6.80369 6.7268 6.80595C6.79115 6.83099 6.85221 6.86378 6.90863 6.9036C7.06203 7.12392 7.0922 7.36282 6.99093 7.56166Z" />
                                     </g>
                                 </svg>
-                                2500 miles
+                                155,468 KM
                             </li>
                             <li>
                                 <svg width="13" height="13" viewBox="0 0 13 13"
@@ -984,16 +1086,24 @@
                         <div class="swiper product-img-slider">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
+                                    <div class="offer-badge">RM 400 OFF</div>
                                     <img src="assets/img/home1/product-img-7.png" alt="image">
+                                    <img src="assets/img/bannerimages/offer.jpg" alt="" style="width: 100%;height: auto;margin-bottom: 15px;bottom: 10px;position: relative;">
                                 </div>
                                 <div class="swiper-slide">
+                                    <div class="offer-badge">RM 400 OFF</div>
                                     <img src="assets/img/home1/product-img-7.png" alt="image">
+                                    <img src="assets/img/bannerimages/offer.jpg" alt="" style="width: 100%;height: auto;margin-bottom: 15px;bottom: 10px;position: relative;">
                                 </div>
                                 <div class="swiper-slide">
+                                    <div class="offer-badge">RM 400 OFF</div>
                                     <img src="assets/img/home1/product-img-7.png" alt="image">
+                                    <img src="assets/img/bannerimages/offer.jpg" alt="" style="width: 100%;height: auto;margin-bottom: 15px;bottom: 10px;position: relative;">
                                 </div>
                                 <div class="swiper-slide">
+                                    <div class="offer-badge">RM 400 OFF</div>
                                     <img src="assets/img/home1/product-img-7.png" alt="image">
+                                    <img src="assets/img/bannerimages/offer.jpg" alt="" style="width: 100%;height: auto;margin-bottom: 15px;bottom: 10px;position: relative;">
                                 </div>
                             </div>
                         </div>
@@ -1002,12 +1112,24 @@
                         <h5><a href="car.html">Cadillac Escalade-2023</a></h5>
                         <div class="price-location">
                             <div class="price">
-                                <strong>$27,321.00</strong>
+                                <strong class="text-danger"><small>RM</small> 42,000 </strong>
                             </div>
                             <div class="location">
                                 <a href="#"><i class="bi bi-geo-alt"></i> Sydne City</a>
                             </div>
+                           
                         </div>
+                        <div class="car-type">
+                            <div class="card" style="background-color: lightyellow;">
+                                <div class="card-body">
+                                    <div class="car-info">
+                                        <img src="assets/img/bannerimages/building.png" alt="" class="car-image">
+                                        <span class="car-label">National Daily Drive</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
                         <ul class="features">
                             <li>
                                 <svg width="13" height="13" viewBox="0 0 13 13"
@@ -1024,7 +1146,7 @@
                                             d="M7.96853 3.64648C7.92956 3.63086 7.8879 3.62307 7.84592 3.62356C7.80394 3.62404 7.76247 3.63279 7.72387 3.64931C7.68528 3.66583 7.65031 3.68979 7.62098 3.71982C7.59165 3.74986 7.56852 3.78537 7.55292 3.82435L6.62915 6.13025C6.58625 6.12537 6.54313 6.12278 6.49996 6.12249C6.05003 6.12249 5.64362 6.37171 5.43924 6.77288C5.22562 7.19225 5.28035 7.69332 5.58553 8.11316C5.61729 8.15668 5.65563 8.19499 5.69916 8.22675C5.9471 8.407 6.22402 8.50226 6.49996 8.50226C6.94989 8.50226 7.35634 8.25305 7.56067 7.85188C7.7743 7.43251 7.71957 6.93148 7.4146 6.51194C7.3828 6.46827 7.34439 6.42982 7.30076 6.39797C7.27754 6.38137 7.25388 6.36541 7.22979 6.3501L8.1464 4.06206C8.17791 3.98336 8.17688 3.89537 8.14352 3.81744C8.11016 3.73951 8.04722 3.67801 7.96853 3.64648ZM6.99093 7.56166C6.94504 7.65244 6.87483 7.72868 6.78812 7.78187C6.70142 7.83506 6.60163 7.8631 6.49992 7.86287C6.36335 7.86287 6.22589 7.81518 6.0912 7.72107C5.93776 7.50075 5.90763 7.26189 6.00894 7.06306C6.05482 6.97227 6.12504 6.89602 6.21175 6.84283C6.29845 6.78964 6.39824 6.7616 6.49996 6.76184C6.56637 6.76184 6.63294 6.77335 6.69935 6.79572C6.70152 6.79662 6.70353 6.79777 6.70574 6.79867C6.71273 6.80144 6.71976 6.80369 6.7268 6.80595C6.79115 6.83099 6.85221 6.86378 6.90863 6.9036C7.06203 7.12392 7.0922 7.36282 6.99093 7.56166Z" />
                                     </g>
                                 </svg>
-                                2500 miles
+                                94,149 KM
                             </li>
                             <li>
                                 <svg width="13" height="13" viewBox="0 0 13 13"
@@ -1127,16 +1249,24 @@
                         <div class="swiper product-img-slider">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
+                                    <div class="offer-badge">RM 1,900 OFF</div>
                                     <img src="assets/img/home1/product-img-8.png" alt="image">
+                                    <img src="assets/img/bannerimages/offer.jpg" alt="" style="width: 100%;height: auto;margin-bottom: 15px;bottom: 10px;position: relative;">
                                 </div>
                                 <div class="swiper-slide">
+                                    <div class="offer-badge">RM 1,900 OFF</div>
                                     <img src="assets/img/home1/product-img-8.png" alt="image">
+                                    <img src="assets/img/bannerimages/offer.jpg" alt="" style="width: 100%;height: auto;margin-bottom: 15px;bottom: 10px;position: relative;">
                                 </div>
                                 <div class="swiper-slide">
+                                    <div class="offer-badge">RM 1,900 OFF</div>
                                     <img src="assets/img/home1/product-img-8.png" alt="image">
+                                    <img src="assets/img/bannerimages/offer.jpg" alt="" style="width: 100%;height: auto;margin-bottom: 15px;bottom: 10px;position: relative;">
                                 </div>
                                 <div class="swiper-slide">
+                                    <div class="offer-badge">RM 1,900 OFF</div>
                                     <img src="assets/img/home1/product-img-8.png" alt="image">
+                                    <img src="assets/img/bannerimages/offer.jpg" alt="" style="width: 100%;height: auto;margin-bottom: 15px;bottom: 10px;position: relative;">
                                 </div>
                             </div>
                         </div>
@@ -1145,12 +1275,25 @@
                         <h5><a href="car.html">Hyundai Sonata C-Class-2022</a></h5>
                         <div class="price-location">
                             <div class="price">
-                                <strong>$24,321.00</strong>
+                                <strong class="text-danger"><small>RM</small> 37,000 </strong>
+
                             </div>
                             <div class="location">
                                 <a href="#"><i class="bi bi-geo-alt"></i> New Delhi</a>
                             </div>
+                          
                         </div>
+                        <div class="car-type">
+                            <div class="card" style="background-color: lightyellow;">
+                                <div class="card-body">
+                                    <div class="car-info">
+                                        <img src="assets/img/bannerimages/family.png" alt="" class="car-image">
+                                        <span class="car-label">Compact SUV</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
                         <ul class="features">
                             <li>
                                 <svg width="13" height="13" viewBox="0 0 13 13"
@@ -1167,7 +1310,7 @@
                                             d="M7.96853 3.64648C7.92956 3.63086 7.8879 3.62307 7.84592 3.62356C7.80394 3.62404 7.76247 3.63279 7.72387 3.64931C7.68528 3.66583 7.65031 3.68979 7.62098 3.71982C7.59165 3.74986 7.56852 3.78537 7.55292 3.82435L6.62915 6.13025C6.58625 6.12537 6.54313 6.12278 6.49996 6.12249C6.05003 6.12249 5.64362 6.37171 5.43924 6.77288C5.22562 7.19225 5.28035 7.69332 5.58553 8.11316C5.61729 8.15668 5.65563 8.19499 5.69916 8.22675C5.9471 8.407 6.22402 8.50226 6.49996 8.50226C6.94989 8.50226 7.35634 8.25305 7.56067 7.85188C7.7743 7.43251 7.71957 6.93148 7.4146 6.51194C7.3828 6.46827 7.34439 6.42982 7.30076 6.39797C7.27754 6.38137 7.25388 6.36541 7.22979 6.3501L8.1464 4.06206C8.17791 3.98336 8.17688 3.89537 8.14352 3.81744C8.11016 3.73951 8.04722 3.67801 7.96853 3.64648ZM6.99093 7.56166C6.94504 7.65244 6.87483 7.72868 6.78812 7.78187C6.70142 7.83506 6.60163 7.8631 6.49992 7.86287C6.36335 7.86287 6.22589 7.81518 6.0912 7.72107C5.93776 7.50075 5.90763 7.26189 6.00894 7.06306C6.05482 6.97227 6.12504 6.89602 6.21175 6.84283C6.29845 6.78964 6.39824 6.7616 6.49996 6.76184C6.56637 6.76184 6.63294 6.77335 6.69935 6.79572C6.70152 6.79662 6.70353 6.79777 6.70574 6.79867C6.71273 6.80144 6.71976 6.80369 6.7268 6.80595C6.79115 6.83099 6.85221 6.86378 6.90863 6.9036C7.06203 7.12392 7.0922 7.36282 6.99093 7.56166Z" />
                                     </g>
                                 </svg>
-                                2500 miles
+                                127,474 KM
                             </li>
                             <li>
                                 <svg width="13" height="13" viewBox="0 0 13 13"
@@ -1267,30 +1410,56 @@
                         <div class="swiper product-img-slider">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="assets/img/home1/product-img-9.png" alt="image">
+                                    <div class="product-card">
+                                        <div class="offer-badge1"><i class="bi bi-lock"></i> Purchase Pending</div>
+                                        <img src="assets/img/home1/product-img-9.png" alt="image">
+                                    </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="assets/img/home1/product-img-9.png" alt="image">
+                                    <div class="product-card">
+                                        <div class="offer-badge1"><i class="bi bi-lock"></i> Purchase Pending</div>
+                                        <img src="assets/img/home1/product-img-9.png" alt="image">
+                                    </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="assets/img/home1/product-img-9.png" alt="image">
+                                    <div class="product-card">
+                                        <div class="offer-badge1"><i class="bi bi-lock"></i> Purchase Pending</div>
+                                        <img src="assets/img/home1/product-img-9.png" alt="image">
+                                    </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="assets/img/home1/product-img-9.png" alt="image">
+                                    <div class="product-card">
+                                        <div class="offer-badge1"><i class="bi bi-lock"></i> Purchase Pending</div>
+                                        <img src="assets/img/home1/product-img-9.png" alt="image">
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <br>
                     </div>
                     <div class="product-content">
                         <h5><a href="car.html">Jeep Grand Cherokee-2023</a></h5>
                         <div class="price-location">
                             <div class="price">
-                                <strong>$25,321.00</strong>
+                                <strong class="text-danger"><small>RM</small> 113,000 </strong>
+
                             </div>
                             <div class="location">
                                 <a href="#"><i class="bi bi-geo-alt"></i> Melbourne City</a>
                             </div>
+                           
                         </div>
+                        <div class="car-type">
+                            <div class="card" style="background-color: lightyellow;">
+                                <div class="card-body">
+                                    <div class="car-info">
+                                        <img src="assets/img/bannerimages/diamond.png" alt="" class="car-image">
+                                        <span class="car-label">Luxury</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
                         <ul class="features">
                             <li>
                                 <svg width="13" height="13" viewBox="0 0 13 13"
@@ -1307,7 +1476,7 @@
                                             d="M7.96853 3.64648C7.92956 3.63086 7.8879 3.62307 7.84592 3.62356C7.80394 3.62404 7.76247 3.63279 7.72387 3.64931C7.68528 3.66583 7.65031 3.68979 7.62098 3.71982C7.59165 3.74986 7.56852 3.78537 7.55292 3.82435L6.62915 6.13025C6.58625 6.12537 6.54313 6.12278 6.49996 6.12249C6.05003 6.12249 5.64362 6.37171 5.43924 6.77288C5.22562 7.19225 5.28035 7.69332 5.58553 8.11316C5.61729 8.15668 5.65563 8.19499 5.69916 8.22675C5.9471 8.407 6.22402 8.50226 6.49996 8.50226C6.94989 8.50226 7.35634 8.25305 7.56067 7.85188C7.7743 7.43251 7.71957 6.93148 7.4146 6.51194C7.3828 6.46827 7.34439 6.42982 7.30076 6.39797C7.27754 6.38137 7.25388 6.36541 7.22979 6.3501L8.1464 4.06206C8.17791 3.98336 8.17688 3.89537 8.14352 3.81744C8.11016 3.73951 8.04722 3.67801 7.96853 3.64648ZM6.99093 7.56166C6.94504 7.65244 6.87483 7.72868 6.78812 7.78187C6.70142 7.83506 6.60163 7.8631 6.49992 7.86287C6.36335 7.86287 6.22589 7.81518 6.0912 7.72107C5.93776 7.50075 5.90763 7.26189 6.00894 7.06306C6.05482 6.97227 6.12504 6.89602 6.21175 6.84283C6.29845 6.78964 6.39824 6.7616 6.49996 6.76184C6.56637 6.76184 6.63294 6.77335 6.69935 6.79572C6.70152 6.79662 6.70353 6.79777 6.70574 6.79867C6.71273 6.80144 6.71976 6.80369 6.7268 6.80595C6.79115 6.83099 6.85221 6.86378 6.90863 6.9036C7.06203 7.12392 7.0922 7.36282 6.99093 7.56166Z" />
                                     </g>
                                 </svg>
-                                2500 miles
+                                155,468 KM
                             </li>
                             <li>
                                 <svg width="13" height="13" viewBox="0 0 13 13"
@@ -1407,16 +1576,24 @@
                         <div class="swiper product-img-slider">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
+                                    <div class="offer-badge">RM 400 OFF</div>
                                     <img src="assets/img/home1/product-img-10.png" alt="image">
+                                    <img src="assets/img/bannerimages/offer.jpg" alt="" style="width: 100%;height: auto;margin-bottom: 15px;bottom: 10px;position: relative;">
                                 </div>
                                 <div class="swiper-slide">
+                                    <div class="offer-badge">RM 400 OFF</div>
                                     <img src="assets/img/home1/product-img-10.png" alt="image">
+                                    <img src="assets/img/bannerimages/offer.jpg" alt="" style="width: 100%;height: auto;margin-bottom: 15px;bottom: 10px;position: relative;">
                                 </div>
                                 <div class="swiper-slide">
+                                    <div class="offer-badge">RM 400 OFF</div>
                                     <img src="assets/img/home1/product-img-10.png" alt="image">
+                                    <img src="assets/img/bannerimages/offer.jpg" alt="" style="width: 100%;height: auto;margin-bottom: 15px;bottom: 10px;position: relative;">
                                 </div>
                                 <div class="swiper-slide">
+                                    <div class="offer-badge">RM 400 OFF</div>
                                     <img src="assets/img/home1/product-img-10.png" alt="image">
+                                    <img src="assets/img/bannerimages/offer.jpg" alt="" style="width: 100%;height: auto;margin-bottom: 15px;bottom: 10px;position: relative;">
                                 </div>
                             </div>
                         </div>
@@ -1425,12 +1602,25 @@
                         <h5><a href="car.html">BMW 3 Series Class-2022</a></h5>
                         <div class="price-location">
                             <div class="price">
-                                <strong>$66,321.00</strong>
+                                <strong class="text-danger"><small>RM</small> 42,000 </strong>
                             </div>
                             <div class="location">
                                 <a href="#"><i class="bi bi-geo-alt"></i> Sydne City</a>
                             </div>
+                           
+                           
                         </div>
+                        <div class="car-type">
+                            <div class="card" style="background-color: lightyellow;">
+                                <div class="card-body">
+                                    <div class="car-info">
+                                        <img src="assets/img/bannerimages/building.png" alt="" class="car-image">
+                                        <span class="car-label">National Daily Drive</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
                         <ul class="features">
                             <li>
                                 <svg width="13" height="13" viewBox="0 0 13 13"
@@ -1447,7 +1637,7 @@
                                             d="M7.96853 3.64648C7.92956 3.63086 7.8879 3.62307 7.84592 3.62356C7.80394 3.62404 7.76247 3.63279 7.72387 3.64931C7.68528 3.66583 7.65031 3.68979 7.62098 3.71982C7.59165 3.74986 7.56852 3.78537 7.55292 3.82435L6.62915 6.13025C6.58625 6.12537 6.54313 6.12278 6.49996 6.12249C6.05003 6.12249 5.64362 6.37171 5.43924 6.77288C5.22562 7.19225 5.28035 7.69332 5.58553 8.11316C5.61729 8.15668 5.65563 8.19499 5.69916 8.22675C5.9471 8.407 6.22402 8.50226 6.49996 8.50226C6.94989 8.50226 7.35634 8.25305 7.56067 7.85188C7.7743 7.43251 7.71957 6.93148 7.4146 6.51194C7.3828 6.46827 7.34439 6.42982 7.30076 6.39797C7.27754 6.38137 7.25388 6.36541 7.22979 6.3501L8.1464 4.06206C8.17791 3.98336 8.17688 3.89537 8.14352 3.81744C8.11016 3.73951 8.04722 3.67801 7.96853 3.64648ZM6.99093 7.56166C6.94504 7.65244 6.87483 7.72868 6.78812 7.78187C6.70142 7.83506 6.60163 7.8631 6.49992 7.86287C6.36335 7.86287 6.22589 7.81518 6.0912 7.72107C5.93776 7.50075 5.90763 7.26189 6.00894 7.06306C6.05482 6.97227 6.12504 6.89602 6.21175 6.84283C6.29845 6.78964 6.39824 6.7616 6.49996 6.76184C6.56637 6.76184 6.63294 6.77335 6.69935 6.79572C6.70152 6.79662 6.70353 6.79777 6.70574 6.79867C6.71273 6.80144 6.71976 6.80369 6.7268 6.80595C6.79115 6.83099 6.85221 6.86378 6.90863 6.9036C7.06203 7.12392 7.0922 7.36282 6.99093 7.56166Z" />
                                     </g>
                                 </svg>
-                                2500 miles
+                               94,159 KM
                             </li>
                             <li>
                                 <svg width="13" height="13" viewBox="0 0 13 13"
