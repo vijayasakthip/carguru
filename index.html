@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/jquery-ui.css" rel="stylesheet">
     <!-- Bootstrap Icon CSS -->
     <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
@@ -99,10 +99,10 @@
     margin-top: 10px;
 }
 /* Remove the max-width and make banner content full width */
-.banner-section1 .banner-content {
-    max-width: none !important; /* Remove any default max-width */
-    width: 100% !important;     /* Ensure it takes full width */
-}
+/* .banner-section1 .banner-content { */
+    /* max-width: none !important; Remove any default max-width */
+    /* width: 100% !important;     Ensure it takes full width */
+/* } */
 
 .option-card {
     background-color: white; /* Light background for default state */
@@ -114,7 +114,7 @@
     color: white !important; /* Ensure text turns white */
 }
 
-    .main-menu ul > li.active > a {
+    /* .main-menu ul > li.active > a {
     color: white;
     }
     .main-menu ul > li:hover > a {
@@ -132,11 +132,11 @@
     font-size: 13px;
     transition: all 0.5s ease-out 0s;
     position: relative;
-}
+} */
 
-.top-bar .topbar-right ul li.drop {
+/* .top-bar .topbar-right ul li.drop {
     line-height: 3;
-}
+} */
 .dropdown-menu {
     display: none;
     opacity: 0;
@@ -168,10 +168,10 @@
 .pagination .page-item .page-link:hover {
     background-color: #ddd;
 }
-.nav-item.active {
+/* .nav-item.active {
     color: white !important; /* Ensure text color stays white */
-    background-color: #dc3545 !important; /* Red background */
-}
+    /* background-color: #dc3545 !important; Red background 
+ } */
 
 /* On screens smaller than 425px (mobile devices) */
 @media (max-width: 425px) {
@@ -331,9 +331,9 @@
     color: #007bff; /* Change the color on hover */
     transform: scale(1.05); /* Slight zoom effect on hover */
 }
-.navcar:hover {
+/* .navcar:hover {
     color: white !important; /* White text color on hover */
-}
+/* } */ 
 .offer-badge {
     position: absolute;
     top: 0px; /* Adjust as needed */
@@ -391,6 +391,242 @@
     font-weight: 600;
     color: #424242;
 }
+@media (min-width: 992px) { /* Apply styles only for large screens */
+    .carguru-navbar .navbar-nav {
+        margin-left: 20px; /* Adjust this value for the desired left spacing */
+    }
+}
+
+/* Default state for nav-link */
+.navbar-nav .nav-link {
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for the link */
+    transition: all 0.3s ease; /* Smooth transition for hover and active states */
+}
+
+/* Hover effect */
+.navbar-nav .nav-link:hover {
+    background-color: #B71C1C; /* Red background */
+    color: white; /* White text */
+}
+
+/* Active state when clicked */
+.navbar-nav .nav-link.active {
+    background-color: #B71C1C; /* Red background */
+    color: white; /* White text */
+}
+/* Add space between the navbar items with a custom class */
+.custom-nav .custom-nav-item {
+    margin-right: 30px; /* Adds space between the items */
+}
+
+/* Optional: Add space on the left side of the navbar with a custom class */
+.custom-navbar .container-fluid {
+    padding-left: 20px; /* Adds space to the left side */
+}
+
+/* Optional: Make sure the items are aligned to the left with a custom class */
+.custom-navbar .navbar-nav {
+    display: flex;
+    justify-content: flex-start; /* Aligns the items to the left */
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Reduce the overall height of the navbar */
+.main-menus .navbar {
+    padding-top: 5px;  /* Adjust the top padding */
+    padding-bottom: 5px;  /* Adjust the bottom padding */
+}
+
+/* Reduce the height of navbar items (links) */
+.main-menus .navbar-nav .nav-item {
+    padding-top: 0px;  /* Remove top padding */
+    padding-bottom: 0px;  /* Remove bottom padding */
+}
+
+/* Reduce the padding of buttons inside navbar */
+.main-menus .navbar-nav .btn {
+    padding-top: 5px;  /* Adjust the top padding of buttons */
+    padding-bottom: 5px;  /* Adjust the bottom padding of buttons */
+}
+
+/* Adjust the size of the brand logo text */
+.main-menus .navbar-brand {
+    font-size: 1.2rem;  /* Reduce font size of brand text */
+    padding-top: 5px;  /* Optional: Adjust the top padding */
+    padding-bottom: 5px;  /* Optional: Adjust the bottom padding */
+}
+
+/* Reduce the height of dropdown button */
+.main-menus .navbar-nav .dropdown-toggle {
+    padding-top: 5px;  /* Reduce top padding */
+    padding-bottom: 5px;  /* Reduce bottom padding */
+}
+
+/* Optional: Adjust the padding of the navbar links (like Call Us) */
+.main-menus .navbar-nav .nav-link {
+    padding-top: 5px;  /* Adjust the top padding of nav links */
+    padding-bottom: 5px;  /* Adjust the bottom padding of nav links */
+}
+
+/* Container for banner images */
+.banner-container {
+    position: relative;
+    overflow: hidden; /* Hide any part of the images outside of the container */
+    width: 100%; /* Full width */
+    height: 350px; /* Fixed height as per your request */
+}
+
+/* Banner images section */
+.banner-images {
+    display: flex; /* Align images side by side */
+    transition: transform 1s ease-in-out; /* Smooth transition for sliding */
+    width: 300%; /* This will ensure that all images are displayed horizontally */
+}
+
+/* Make sure the images stretch and take the full container width */
+.slider-image {
+    height: 350px; /* Fixed height */
+    width: 100%; /* Full width */
+    object-fit: cover; /* Ensure the images maintain aspect ratio */
+}
+
+/* Navigation buttons */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Set the default text color */
+.filter-link {
+    color: #000; /* Black text by default */
+}
+
+/* Hover effect */
+.filter-link:hover {
+    background-color: #B71C1C; /* Red background */
+    color: white!important; /* White text on hover */
+    padding: 5px 10px; /* Optional, add some padding on hover */
+    border-radius: 5px; /* Optional, rounded corners on hover */
+}
+
+/* Active state (when clicked) */
+.filter-link.active {
+    background-color: #B71C1C; /* Red background when active */
+    padding: 5px 10px; /* Optional, add some padding on hover */
+    border-radius: 5px; /* Optional, rounded corners on hover */
+    color: white!important; /* White text when active */
+}
+/* Adjust the dropdown position if needed */
+.offcanvas .dropdown-menu {
+    position: absolute;
+    top: 100%; /* Position it directly below the button */
+    left: 0;
+    z-index: 1050;
+}
+/* Make the offcanvas body scrollable */
+.offcanvas-body {
+    max-height: 80vh; /* You can adjust the height based on your design */
+    overflow-y: auto; /* Allows vertical scrolling */
+}
+/* Style the dropdown wrapper */
+.user-menu-box {
+    border: 2px solid #B71C1C; /* Golden border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Add some padding inside the box */
+    background-color: white; /* White background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow */
+}
+#sidebar_brand{
+    transform: translateX(100%); /* Move off-screen */
+    position: fixed;
+    width: 42%;
+    bottom: 0; 
+    right: 0;
+    height: 100vh;
+    background-color: #f8f9fa;
+    box-shadow: -2px 0px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease; 
+    z-index: 3; 
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width:769px){
+    #sidebar_brand{
+    position: fixed;
+    width: 60%;
+    bottom: 0; 
+    right: 0;
+    height: 100vh;
+    background-color: #f8f9fa;
+    box-shadow: -2px 0px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease; 
+    z-index: 3; 
+    display: flex;
+    flex-direction: column;
+}
+}
+@media (max-width:426px){
+    #sidebar_brand{
+    position: fixed;
+    width: 100%;
+    bottom: 0; 
+    right: 0;
+    height: 100vh;
+    background-color: #f8f9fa;
+    box-shadow: -2px 0px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease; 
+    z-index: 3; 
+    display: flex;
+    flex-direction: column;
+}
+}
+@media (max-width:376px){
+    #sidebar_brand{
+    position: fixed;
+    width: 100%;
+    bottom: 0; 
+    right: 0;
+    height: 100vh;
+    background-color: #f8f9fa;
+    box-shadow: -2px 0px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease; 
+    z-index: 3; 
+    display: flex;
+    flex-direction: column;
+}
+}
+@media (max-width:321px){
+    #sidebar_brand{
+    position: fixed;
+    width: 100%;
+    bottom: 0; 
+    right: 0;
+    height: 100vh;
+    background-color: #f8f9fa;
+    box-shadow: -2px 0px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease; 
+    z-index: 3; 
+    display: flex;
+    flex-direction: column;
+}
+}
     </style>
 </head>
 
@@ -427,9 +663,13 @@
         <!-- Card Sidebar --> 
         <div class="modal signUp-modal fade" id="signUpModal01" tabindex="-1" aria-labelledby="signUpModal01Label" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
-              
                 <div class="modal-content" style="border-radius: 30px; padding: 20px; background-color: white; border: 2px solid #FFD700; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);">
-                    <h4 class="modal-title text-center" id="signUpModal01Label" style="font-weight: bold; text-align: center;">Login / Sign Up</h4>
+                    
+                    <!-- Modal Header with Close Button -->
+                    <div class="modal-header">
+                        <h4 class="modal-title text-center" id="signUpModal01Label" style="font-weight: bold; text-align: center;">Login / Sign Up</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x"></i></button>
+                    </div>
                     
                     <br>
                     <div class="d-flex justify-content-center" style="display: flex; justify-content: center;">
@@ -450,10 +690,8 @@
                             </div>
                             <div class="row">
                                 <!-- Using data-bs-target and data-bs-toggle to open the Log In modal -->
-                               
                                 <button class="btn btn-outline-danger" type="button" data-bs-toggle="modal" data-bs-target="#logInModal01" class="btn-link">Get OTP</button>
                             </div>
-                           
                             <div class="terms-condition text-center mt-3" style="text-align: center; margin-top: 15px;">
                                 <p>By signing up, I agree to CARGURU's <a href="#" style="color: #007BFF;">Terms & Conditions</a></p>
                             </div>
@@ -470,6 +708,7 @@
                 </div>
             </div>
         </div>
+        
         
         <!-- Log In Modal -->
         <div class="modal signUp-modal fade" id="logInModal01" tabindex="-1" aria-labelledby="logInModal01Label" aria-hidden="true">
@@ -501,75 +740,117 @@
             </div>
         </div>
 
-
-    <div class="main-menu" style="background-color: #B71C1C;">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <a class="navbar-brand text-white" href="#">Address Locator</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav1">
-                    <ol class="navbar-nav ms-auto d-flex align-items-center" style="z-index: 4;">
-                        <li class="nav-item">
-                            <span class="nav-link text-white">Call Us: 1-888-999-00</span>
-                        </li>
-                        <li class="nav-item">
-                            <button type="button" class="btn me-3 align-items-center" data-bs-toggle="modal" data-bs-target="#signUpModal01">
-                                Login / Sign Up
-                            </button>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4311 12.759C15.417 11.4291 16 9.78265 16 8C16 3.58169 12.4182 0 8 0C3.58169 0 0 3.58169 0 8C0 12.4182 3.58169 16 8 16C10.3181 16 12.4058 15.0141 13.867 13.4387C14.0673 13.2226 14.2556 12.9957 14.4311 12.759ZM13.9875 12C14.7533 10.8559 15.1999 9.48009 15.1999 8C15.1999 4.02355 11.9764 0.799983 7.99991 0.799983C4.02355 0.799983 0.799983 4.02355 0.799983 8C0.799983 9.48017 1.24658 10.8559 2.01245 12C2.97866 10.5566 4.45301 9.48194 6.17961 9.03214C5.34594 8.45444 4.79998 7.49102 4.79998 6.39995C4.79998 4.63266 6.23271 3.19993 8 3.19993C9.76729 3.19993 11.2 4.63266 11.2 6.39995C11.2 7.49093 10.654 8.45444 9.82039 9.03206C11.5469 9.48194 13.0213 10.5565 13.9875 12ZM13.4722 12.6793C12.3495 10.8331 10.3188 9.59997 8.00008 9.59997C5.68126 9.59997 3.65049 10.8331 2.52776 12.6794C3.84829 14.2222 5.80992 15.2 8 15.2C10.1901 15.2 12.1517 14.2222 13.4722 12.6793ZM8 8.79998C9.32551 8.79998 10.4 7.72554 10.4 6.39995C10.4 5.07444 9.32559 3.99992 8 3.99992C6.6744 3.99992 5.59997 5.07452 5.59997 6.40003C5.59997 7.72554 6.67449 8.79998 8 8.79998Z" />
-                                </svg>
-                            </button>
-                            <!-- Ensuring the dropdown is aligned to the right -->
-                            <ol class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="myaccount.html">My Account</a></li>
-                                <li><a class="dropdown-item" href="appointments.html">Appointments</a></li>
-                                <li><a class="dropdown-item" href="orders.html">Orders</a></li>
-                                <li><a class="dropdown-item" href="savedcars.html">Saved Cars</a></li>
-                                <li><a class="dropdown-item" href="sell.html">Bidding</a></li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
-                            </ol>
-                        </li>
-                    </ol>
-                </div>
+<!-- Address Locator Navbar -->
+<div class="main-menus d-none d-lg-block" style="background-color: #B71C1C;">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Address Locator</a>
+            <div class="collapse navbar-collapse" id="navbarNav1">
+                <ul class="navbar-nav ms-auto d-flex align-items-center">
+                    <li class="nav-item">
+                        <span class="nav-link text-white">Call Us: 1-888-999-00</span>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn me-3" data-bs-toggle="modal" data-bs-target="#signUpModal01">
+                            Login / Sign Up
+                        </button>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="myaccount.html">My Account</a></li>
+                            <li><a class="dropdown-item" href="appointments.html">Appointments</a></li>
+                            <li><a class="dropdown-item" href="orders.html">Orders</a></li>
+                            <li><a class="dropdown-item" href="savedcars.html">Saved Cars</a></li>
+                            <li><a class="dropdown-item" href="sell.html">Bidding</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </div>
-<!-- Header Section -->
-
-<div class="main-menu" style="background-color: #FFC107;">
-<nav class="navbar navbar-expand-lg navbar-light" >
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">CARGURU</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li id="buy_a_car" class="nav-item active">
-                    <a class="nav-link navcar" href="#">I want to Buy a Car</a>
-                </li>
-                <li id="sell_a_car" class="nav-item">
-                    <a class="nav-link navcar" href="#">I want to Sell a Car</a>
-                </li>
-                <li id="other_services" class="nav-item">
-                    <a class="nav-link navcar" href="#">Other Services</a>
-                </li>
-                <li id="about_us" class="nav-item">
-                    <a class="nav-link navcar" href="#">About Us</a>
-                </li>
-                <li id="contact_us" class="nav-item">
-                    <a class="nav-link navcar" href="#">Contact Us</a>
-                </li>
-            </ul>
         </div>
+    </nav>
+</div>
+
+<!-- CARGURU Navbar -->
+<div class="main-menu custom-navbar" style="background-color: #FFC107;">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CARGURU</a>
+            <button class="btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNav">
+                <ul class="navbar-nav custom-nav">
+                    <li class="nav-item custom-nav-item">
+                        <a class="nav-link active" href="#">I want to Buy a Car</a>
+                    </li>
+                    <li class="nav-item custom-nav-item"><a class="nav-link" href="#">I want to Sell a Car</a></li>
+                    <li class="nav-item custom-nav-item"><a class="nav-link" href="#">Other Services</a></li>
+                    <li class="nav-item custom-nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item custom-nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!-- Mobile Sidebar (Offcanvas) -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">CARGURU</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
-</nav>
+    <hr>
+    <div class="offcanvas-body">
+
+        <!-- CARGURU Items -->
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">I want to Buy a Car</a></li>
+            <hr>
+            <li class="nav-item"><a class="nav-link" href="#">I want to Sell a Car</a></li>
+            <hr>
+            <li class="nav-item"><a class="nav-link" href="#">Other Services</a></li>
+            <hr>
+            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+            <hr>
+            <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+        </ul>
+
+        <hr>
+
+        <!-- Address Locator Items -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <span class="nav-link text-dark">Call Us: 1-888-999-00</span>
+            </li>
+            <li class="nav-item mb-2">
+                <button type="button" class="btn btn-outline-danger w-100" data-bs-toggle="modal" data-bs-target="#signUpModal01">
+                    Login / Sign Up
+                </button>
+            </li>
+         
+            <li class="nav-item dropdown mb-2">
+                <button class="btn w-100" type="button" data-bs-toggle="collapse" data-bs-target="#userMenuCollapse" aria-expanded="false" aria-controls="userMenuCollapse">
+                    <i class="bi bi-person-circle"></i>
+                </button>
+                <div class="collapse user-menu-box" id="userMenuCollapse">
+                    <ul class="list-unstyled">
+                        <li><a class="dropdown-item" href="myaccount.html">My Account</a></li>
+                        <li><a class="dropdown-item" href="appointments.html">Appointments</a></li>
+                        <li><a class="dropdown-item" href="orders.html">Orders</a></li>
+                        <li><a class="dropdown-item" href="savedcars.html">Saved Cars</a></li>
+                        <li><a class="dropdown-item" href="sell.html">Bidding</a></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </li>
+            
+        </ul>
+
+    </div>
 </div>
 
 
@@ -577,35 +858,35 @@
 <!-- Start Banner section -->
 
    <!-- Use container-fluid for full-width -->
-        <div>
+        <!-- <div>
             <div class="col-xxl-12 col-xl-12 d-flex align-items-center wow fadeInUp" data-wow-delay="200ms">
-                <div class="banner-content">
+                <div class="banner-content"> -->
                     <!-- Bootstrap Carousel -->
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
+                    <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" > -->
                         <!-- Indicators (optional, can be removed) -->
-                        <div class="carousel-indicators">
+                        <!-- <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
 
-                        </div>
+                        </div> -->
                         
                         <!-- Slides -->
-                        <div class="carousel-inner" style="height: 600px;">
+                        <!-- <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="assets/img/bannerimages/1.jpg" class="d-block w-100 h-100" alt="Slide 1">
+                                <img src="assets/img/bannerimages/bannerimage.jpg"  alt="Slide 1">
                             </div>
                             <div class="carousel-item">
-                                <img src="assets/img/bannerimages/1.jpg" class="d-block w-100 h-100" alt="Slide 2">
+                                <img src="assets/img/bannerimages/1.jpg"  alt="Slide 2">
                             </div>
                             <div class="carousel-item">
-                                <img src="assets/img/bannerimages/1.jpg" class="d-block w-100 h-100" alt="Slide 3">
+                                <img src="assets/img/bannerimages/1.jpg"  alt="Slide 3">
                             </div>
                          
-                        </div>
+                        </div> -->
 
                         <!-- Controls -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
@@ -616,8 +897,23 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 <!-- End Banner section -->
+<!-- Start Banner section -->
+<div class="banner-container">
+    <div class="banner-images">
+        <img src="assets/img/bannerimages/1.jpg" alt="Slide 1" class="slider-image">
+        <img src="assets/img/bannerimages/1.jpg" alt="Slide 2" class="slider-image">
+        <img src="assets/img/bannerimages/1.jpg" alt="Slide 3" class="slider-image">
+    </div>
+
+    <!-- Navigation buttons -->
+    <button class="nav-button prev" id="prevButton">&lt;</button>
+    <button class="nav-button next" id="nextButton">&gt;</button>
+</div>
+
+<!-- End Banner section -->
+
 
 <!-- Start Search Card -->
 <div class="container mt-4 ">
@@ -649,22 +945,22 @@
 <div class="container mt-4">
     <div class="d-flex justify-content-start flex-wrap">
         <div class="mx-3 mb-3">
-            <a href="#" class="text-decoration-none text-dark">Make & Model</a>
+            <a href="#" class="filter-link text-decoration-none text-dark">Make & Model</a>
         </div>
         <div class="mx-3 mb-3">
-            <a href="#" class="text-decoration-none text-dark">Body Type</a>
+            <a href="#" class="filter-link text-decoration-none text-dark">Body Type</a>
         </div>
         <div class="mx-3 mb-3">
-            <a href="#" class="text-decoration-none text-dark">Year & Mileage</a>
+            <a href="#" class="filter-link text-decoration-none text-dark">Year & Mileage</a>
         </div>
         <div class="mx-3 mb-3">
-            <a href="#" class="text-decoration-none text-dark">Exterior Color</a>
+            <a href="#" class="filter-link text-decoration-none text-dark">Exterior Color</a>
         </div>
         <div class="mx-3 mb-3">
-            <a href="#" class="text-decoration-none text-dark">Great Deals</a>
+            <a href="#" class="filter-link text-decoration-none text-dark">Great Deals</a>
         </div>
         <div class="mx-3 mb-3">
-            <a href="#" class="text-decoration-none text-dark">Price Range</a>
+            <a href="#" class="filter-link text-decoration-none text-dark">Price Range</a>
         </div>
     </div>
 </div>
@@ -673,7 +969,7 @@
     <!-- Start Recent Product section -->
     <div class="recent-product-section mb-100">
         <div class="container">
-            <div class="row mb-60 wow fadeInUp" data-wow-delay="200ms">
+            <div class="row mb-3 wow fadeInUp" data-wow-delay="200ms">
                 <div class="col-lg-12 d-flex align-items-end justify-content-between flex-wrap gap-4">
                     <div class="section-title1">
                         <h2>Popular Categories</h2>
@@ -688,18 +984,18 @@
 <div class="scroll-container">
     
     <div class="categories" id="categories">
-        <button class="category active rounded-pill">Electric</button>
-        <button class="category rounded-pill">SUV</button>
-        <button class="category rounded-pill">Sedan</button>
-        <button class="category rounded-pill">Pickup Truck</button>
-        <button class="category rounded-pill">Luxury</button>
-        <button class="category rounded-pill">Crossover</button>
-        <button class="category rounded-pill">Hybrid</button>
-        <button class="category rounded-pill">Diesel</button>
-        <button class="category rounded-pill">Coupe</button>
-        <button class="category rounded-pill">Hatchback</button>
-        <button class="category rounded-pill">Wagon</button>
-        <button class="category rounded-pill">Convertible</button>
+        <button class="category active rounded-pill" id="">Electric</button>
+        <button class="category rounded-pill" id="">SUV</button>
+        <button class="category rounded-pill" id="">Sedan</button>
+        <button class="category rounded-pill" id="">Pickup Truck</button>
+        <button class="category rounded-pill" id="">Luxury</button>
+        <button class="category rounded-pill" id="">Crossover</button>
+        <button class="category rounded-pill" id="">Hybrid</button>
+        <button class="category rounded-pill" id="">Diesel</button>
+        <button class="category rounded-pill" id="">Coupe</button>
+        <button class="category rounded-pill" id="">Hatchback</button>
+        <button class="category rounded-pill" id="">Wagon</button>
+        <button class="category rounded-pill" id="">Convertible</button>
     </div>
 
     <button class="scroll-btn ms-2" id="scroll-btn">➜</button>
@@ -710,19 +1006,61 @@
 
 
 <!-- Sidebar -->
+<div class="sidebar" id="sidebar_brand">
 
-<div class="sidebar" id="sidebar" style="position: fixed; bottom: 0; right: -250px; width: 250px; height: 85vh; background-color: #f8f9fa; box-shadow: -2px 0px 5px rgba(0,0,0,0.1); transition: transform 0.3s ease;z-index: 3;">
-    <div class="p-3">
-        <h4>Sidebar Content</h4>
-        <p>Here you can put your sidebar content based on the tab clicked.</p>
-        <ul>
-            <li>Electric car details</li>
-            <li>SUV details</li>
-            <li>Sedan details</li>
-            <!-- More details based on the tab clicked -->
-        </ul>
+     <!-- Top of sidebar: Title & Close Button -->
+     <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+        <h4 class="text-center" style="margin: 0;">All Filters</h4>
+        <button id="closeSidebarBtn" style="border: none; background: none; font-size: 20px; cursor: pointer;">❌</button>
+    </div>
+    <hr>
+    <!-- Content area with left (buttons) and right (content) side -->
+    <div style="display: flex; flex-grow: 1; overflow: hidden;">
+
+        <!-- Left side with buttons -->
+        <div id="sidebar-list-container" style="width: 250px; right: -300px; padding: 20px; border-right: 1px solid #ddd; overflow-y: auto;">
+        
+            <div id="sidebar-list">
+                <button class="btn btn-outline-primary" onclick="showContent('electric')" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; cursor: pointer;">Electric</button>
+                <button class="btn btn-outline-primary" onclick="showContent('suv')" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; cursor: pointer;">SUV</button>
+                <button class="btn btn-outline-primary" onclick="showContent('sedan')" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; cursor: pointer;">Sedan</button>
+                <button class="btn btn-outline-primary" onclick="showContent('pickup')" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; cursor: pointer;">Pickup Truck</button>
+                <button class="btn btn-outline-primary" onclick="showContent('luxury')" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; cursor: pointer;">Luxury</button>
+                <button class="btn btn-outline-primary" onclick="showContent('crossover')" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; cursor: pointer;">Crossover</button>
+                <button class="btn btn-outline-primary" onclick="showContent('hybrid')" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; cursor: pointer;">Hybrid</button>
+                <button class="btn btn-outline-primary" onclick="showContent('diesel')" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; cursor: pointer;">Diesel</button>
+                <button class="btn btn-outline-primary" onclick="showContent('coupe')" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; cursor: pointer;">Coupe</button>
+                <button class="btn btn-outline-primary" onclick="showContent('hatchback')" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; cursor: pointer;">Hatchback</button>
+                <button class="btn btn-outline-primary" onclick="showContent('wagon')" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; cursor: pointer;">Wagon</button>
+                <button class="btn btn-outline-primary" onclick="showContent('convertible')" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; cursor: pointer;">Convertible</button>
+            </div>
+        </div>
+
+        <!-- Right side for the content -->
+        <div id="sidebar-content" style="flex-grow: 1; padding: 20px; overflow-y: auto;">
+            <h5 id="content-title">Select a Category</h5>
+            <p id="content-description">Click on a category in the sidebar to display content here.</p>
+        </div>
+    </div>
+
+    <!-- Bottom buttons -->
+    <div style="padding: 20px; border-top: 1px solid #ddd;">
+        <div class="row">
+            <div class="col-lg-6" style="padding-right: 10px;">
+                <button type="button" class="btn btn-outline-primary" style="width: 100%; padding: 10px;">
+                    Reset
+                </button>
+            </div>
+            <div class="col-lg-6" style="padding-left: 10px;">
+                <button type="button" class="btn btn-outline-primary" style="width: 100%; padding: 10px;">
+                    Apply Cars
+                </button>
+            </div>
+        </div>
     </div>
 </div>
+
+
 
 <div class="tab-content" id="myTabContent6">
     <div class="tab-pane fade show active" id="popular-car1" role="tabpanel"
@@ -1791,19 +2129,24 @@
 
     <!--  Main jQuery  -->
     <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-3.6.0.min.js"></script>
+   <!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap JavaScript (make sure this is included) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="assets/js/jquery-ui.js"></script>
     <!-- Popper and Bootstrap JS -->
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <!-- Swiper slider JS -->
-    <script src="assets/js/swiper-bundle.min.js"></script>
+   <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/slick.js"></script>
     <!-- Waypoints JS -->
     <script src="assets/js/waypoints.min.js"></script>
     <!-- WOW JS -->
     <script src="assets/js/wow.min.js"></script>
     <!-- Counterup JS -->
-    <script src="assets/js/jquery.counterup.min.js"></script>
+    <!-- <script src="assets/js/jquery.counterup.min.js"></script> -->
     <!-- Isotope  JS -->
     <script src="assets/js/isotope.pkgd.min.js"></script>
     <!-- Magnific-popup  JS -->
@@ -1880,110 +2223,52 @@
 </script>
 
 
-<!-- JavaScript for toggling background and text color -->
+
+<!-- JavaScript -->
 <script>
-    // Get the navigation items by their IDs
-    const buyACar = document.getElementById('buy_a_car');
-    const sellACar = document.getElementById('sell_a_car');
-    const otherServices = document.getElementById('other_services');
-    const aboutUs = document.getElementById('about_us');
-    const contactUs = document.getElementById('contact_us');
-
-    // Function to change background and text color
-    function toggleActiveClass(selected) {
-        // Get all menu items
-        const menuItems = [buyACar, sellACar, otherServices, aboutUs, contactUs];
-        
-        // Remove active class and reset color for all menu items
-        menuItems.forEach(item => {
-            item.classList.remove('active');
-            item.style.color = "black"; // Reset text color
-            item.style.backgroundColor = ""; // Reset background color
-        });
-
-        // Add active class to the selected element
-        selected.classList.add('active');
-        
-        // Change text color to white and background to red for the selected element
-        selected.style.color = "white";
-        selected.style.backgroundColor = "#dc3545"; // Red background
-    }
-
-    // Event listeners for all menu items
-    buyACar.addEventListener('click', function() {
-        toggleActiveClass(buyACar);
-    });
-
-    sellACar.addEventListener('click', function() {
-        toggleActiveClass(sellACar);
-    });
-
-    otherServices.addEventListener('click', function() {
-        toggleActiveClass(otherServices);
-    });
-
-    aboutUs.addEventListener('click', function() {
-        toggleActiveClass(aboutUs);
-    });
-
-    contactUs.addEventListener('click', function() {
-        toggleActiveClass(contactUs);
-    });
-</script>
-
-
-
-<!-- JavaScript to Show and Hide Sidebar with Sliding Transition -->
-<script>
-  // Get all the nav-link elements and sidebar
-const tabs = document.querySelectorAll('.rounded-pill');
-const sidebar = document.getElementById('sidebar');
-
-// Function to show the sidebar
-function showSidebar() {
-    sidebar.style.transform = 'translateX(-250px)'; // Slide in from the right
-}
-
-// Function to hide the sidebar
-function hideSidebar() {
-    sidebar.style.transform = 'translateX(250px)'; // Slide out to the right
-}
-
-// Add event listener for each tab to show the sidebar and update background color
-tabs.forEach(tab => {
-    tab.addEventListener('click', function(event) {
-        // Prevent the sidebar from being triggered by clicking on the tabs themselves
-        event.stopPropagation(); 
-        
-        // If the sidebar is already visible, hide it before showing again
-        if (sidebar.style.transform === 'translateX(-250px)') {
-            hideSidebar();
-            setTimeout(() => {
-                showSidebar(); // Show it again after a slight delay
-            }, 300); // Delay to match the transition time
-        } else {
-            showSidebar();
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebar = document.getElementById("sidebar_brand");
+        const closeSidebarBtn = document.getElementById("closeSidebarBtn");
+        const tabs = document.querySelectorAll(".rounded-pill");
+    
+        // Function to show the sidebar
+        function showSidebar() {
+            sidebar.style.transform = "translateX(10px)"; // Slide in from right
         }
-
-        // Remove custom background color classes from all tabs
+    
+        // Function to hide the sidebar
+        function hideSidebar() {
+            sidebar.style.transform = "translateX(700px)"; // Slide out to right
+        }
+    
+        // Add event listener for close button
+        closeSidebarBtn.addEventListener("click", hideSidebar);
+    
+        // Add event listener for sidebar trigger buttons
         tabs.forEach(tab => {
-            tab.classList.remove('bg-dark', 'text-white');
-            tab.classList.add('bg-light', 'text-dark');
+            tab.addEventListener("click", function (event) {
+                event.stopPropagation();
+                if (sidebar.style.transform === "translateX(10px)") {
+                    hideSidebar();
+                    setTimeout(showSidebar, 300);
+                } else {
+                    showSidebar();
+                }
+    
+                // Update tab styles
+                tabs.forEach(tab => tab.classList.remove("bg-dark", "text-white"));
+                this.classList.add("bg-dark", "text-white");
+            });
         });
-
-        // Add custom active background color styles to the clicked tab
-        this.classList.remove('bg-light', 'text-dark');
-        this.classList.add('bg-dark', 'text-white');
+    
+        // Close sidebar if clicked outside
+        document.addEventListener("click", function (event) {
+            if (!sidebar.contains(event.target) && !event.target.matches(".rounded-pill")) {
+                hideSidebar();
+            }
+        });
     });
-});
-
-// Close sidebar if clicked outside
-document.addEventListener('click', function(event) {
-    if (!sidebar.contains(event.target) && !event.target.matches('.rounded-pill')) {
-        hideSidebar(); // Slide out if clicked outside the sidebar
-    }
-});
-</script>
+    </script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const smsButton = document.getElementById("smsButton");
@@ -2021,6 +2306,88 @@ document.addEventListener('click', function(event) {
     });
 });
 
+</script>
+<script>
+document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+        // Remove 'active' class from all links
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
+            link.classList.remove('active');
+        });
+
+        // Add 'active' class to the clicked link
+        this.classList.add('active');
+    });
+});
+</script>
+<script>
+    let currentIndex = 0;
+const images = document.querySelectorAll('.banner-images img');
+const totalImages = images.length;
+
+// Get the .banner-images container
+const bannerImagesContainer = document.querySelector('.banner-images');
+
+// Set the initial transform value for the sliding effect
+function updateSlidePosition() {
+    const slideWidth = images[0].clientWidth; // Get the width of the individual images
+    bannerImagesContainer.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+}
+
+// Move to the next slide (right)
+document.getElementById('nextButton').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % totalImages;
+    updateSlidePosition();
+});
+
+// Move to the previous slide (left)
+document.getElementById('prevButton').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    updateSlidePosition();
+});
+
+// Initial update to set the first slide
+updateSlidePosition();
+</script>
+<script>
+    // Add click event listener to each filter link
+const filterLinks = document.querySelectorAll('.filter-link');
+
+filterLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        // Remove 'active' class from all filter links
+        filterLinks.forEach(link => link.classList.remove('active'));
+        
+        // Add 'active' class to the clicked link
+        this.classList.add('active');
+    });
+});
+</script>
+<script>
+    // Close offcanvas when opening the modal
+$('#signUpModal01').on('show.bs.modal', function () {
+    $('#sidebarMenu').offcanvas('hide');
+});
+
+
+</script>
+<script>
+    // Force the backdrop to disappear when the login modal is hidden
+$('#signUpModal01').on('hidden.bs.modal', function () {
+    $('body').removeClass('modal-open');
+    $('.modal-backdrop').remove();
+    
+    // Ensure the offcanvas backdrop is also removed if it's still there
+    $('.offcanvas-backdrop.show').removeClass('show');
+});
+// Force the backdrop to disappear when the login modal is hidden
+$('#logInModal01').on('hidden.bs.modal', function () {
+    $('body').removeClass('modal-open');
+    $('.modal-backdrop').remove();
+    
+    // Ensure the offcanvas backdrop is also removed if it's still there
+    $('.offcanvas-backdrop.show').removeClass('show');
+});
 </script>
 <!-- JavaScript to Handle Modal Toggle -->
 </body>
