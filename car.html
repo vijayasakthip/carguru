@@ -127,25 +127,6 @@
   color: white !important; 
 }
 
-.main-menu ul > li.active > a {
-    color: white;
-    }
-    .main-menu ul > li:hover > a {
-    color: white;
-    }   
-.main-menu ul > li a {
-    color: var(--title-color);
-    display: block;
-    text-transform: capitalize;
-    padding: 15px 20px;
-    position: relative;
-    font-family: var(--font-montserrat);
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 13px;
-    transition: all 0.5s ease-out 0s;
-    position: relative;
-}
 
 .selected {
       background-color: #B71C1C;
@@ -155,11 +136,6 @@
     color: white !important; /* White text color on hover */
 }
 
-/* Active state styles */
-.main-menu ul > li.active > a {
-    color: white !important; /* White text color for active item */
-    background-color: #dc3545 !important; /* Red background for active item */
-}
 /* Active button style */
 .btn.active {
     background-color: #dc3545; /* Red background */
@@ -239,7 +215,53 @@
         position: relative;
         padding-bottom: 5px; /* Add some space below text */
     }
+/* Ensure full width on mobile */
+@media (max-width: 768px) {
+    .tabs {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: 8px;
+        padding-bottom: 10px;
+        scrollbar-width: thin; /* Hide scrollbar */
+    }
 
+    .tab {
+        flex: 1;
+        text-align: center;
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+        min-width: 120px; /* Prevent tabs from shrinking too much */
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .checklist {
+        padding-left: 0;
+    }
+
+    .checklist li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        font-size: 14px;
+    }
+
+    .check-icon img {
+        width: 12px; /* Adjust icon size */
+    }
+    .ruled-line {
+        border-bottom: 2px solid #000; /* Adds a ruled line under the text */
+        padding-bottom: 5px; /* Adjust padding to make it look cleaner */
+        width: 250px!important;
+    }
+}
     .ruled-line {
         border-bottom: 2px solid #000; /* Adds a ruled line under the text */
         padding-bottom: 5px; /* Adjust padding to make it look cleaner */
@@ -283,129 +305,354 @@
             display: flex;
             gap: 10px;
         }
+          
+/* Default state for nav-link */
+.navbar-nav .nav-link {
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for the link */
+    transition: all 0.3s ease; /* Smooth transition for hover and active states */
+}
+
+/* Hover effect */
+.navbar-nav .nav-link:hover {
+    background-color: #B71C1C; /* Red background */
+    color: white!important; /* White text */
+}
+
+/* Active state when clicked */
+.navbar-nav .nav-link.active {
+    background-color: #B71C1C; /* Red background */
+    color: white!important; /* White text */
+}
+/* Add space between the navbar items with a custom class */
+.custom-nav .custom-nav-item {
+    margin-right: 30px; /* Adds space between the items */
+}
+
+/* Optional: Add space on the left side of the navbar with a custom class */
+.custom-navbar .container-fluid {
+    padding-left: 20px; /* Adds space to the left side */
+}
+
+/* Optional: Make sure the items are aligned to the left with a custom class */
+.custom-navbar .navbar-nav {
+    display: flex;
+    justify-content: flex-start; /* Aligns the items to the left */
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Reduce the overall height of the navbar */
+.main-menus .navbar {
+    padding-top: 5px;  /* Adjust the top padding */
+    padding-bottom: 5px;  /* Adjust the bottom padding */
+}
+
+/* Reduce the height of navbar items (links) */
+.main-menus .navbar-nav .nav-item {
+    padding-top: 0px;  /* Remove top padding */
+    padding-bottom: 0px;  /* Remove bottom padding */
+}
+
+/* Reduce the padding of buttons inside navbar */
+.main-menus .navbar-nav .btn {
+    padding-top: 5px;  /* Adjust the top padding of buttons */
+    padding-bottom: 5px;  /* Adjust the bottom padding of buttons */
+}
+
+/* Adjust the size of the brand logo text */
+.main-menus .navbar-brand {
+    font-size: 1.2rem;  /* Reduce font size of brand text */
+    padding-top: 5px;  /* Optional: Adjust the top padding */
+    padding-bottom: 5px;  /* Optional: Adjust the bottom padding */
+}
+
+/* Reduce the height of dropdown button */
+.main-menus .navbar-nav .dropdown-toggle {
+    padding-top: 5px;  /* Reduce top padding */
+    padding-bottom: 5px;  /* Reduce bottom padding */
+}
+
+/* Optional: Adjust the padding of the navbar links (like Call Us) */
+.main-menus .navbar-nav .nav-link {
+    padding-top: 5px;  /* Adjust the top padding of nav links */
+    padding-bottom: 5px;  /* Adjust the bottom padding of nav links */
+}
+/* Style the dropdown wrapper */
+.user-menu-box {
+    border: 2px solid #B71C1C; /* Golden border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Add some padding inside the box */
+    background-color: white; /* White background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow */
+}
+.details {
+    white-space: nowrap; /* Prevents text wrapping inside buttons */
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .col.d-flex {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        align-items: center; /* Center buttons */
+    }
+
+    .details {
+        width: 90%; /* Makes buttons full width but leaves some margin */
+        text-align: center;
+    }
+}
+
+/* Default Styles */
+.sticky-bar {
+    background-color: #FFC107;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 9999;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .sticky-bar {
+    background-color: #FFC107;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    padding: 10px 0;
+    z-index: 9999;
+    }
+    .sticky-bar .row {
+        flex-direction: column; /* Stack items in a column */
+        text-align: center;
+    }
+
+    .sticky-bar .col-3 {
+        width: 100%; /* Make each section take full width */
+        margin-bottom: 10px; /* Add spacing */
+    }
+}
+.car-card-details{
+    height: 480px;
+}
+@media (max-width: 768px) {
+    
+    .car-card-details{
+    height: 540px;
+    }
+    .bookthiscar{
+        width: 100%;
+    }
+    
+}
+@media (max-width: 426px) {
+    
+    .car-card-details{
+    height: 570px;
+    }
+    .bookthiscar{
+        width: 100%;
+    }
+    
+}
+@media (max-width: 376px) {
+    
+    .car-card-details{
+    height: 610px;
+    }
+    .bookthiscar{
+        width: 100%;
+    }
+    
+}
+@media (max-width: 321px) {
+    
+    .car-card-details{
+    height: 630px;
+    }
+    .bookthiscar{
+        width: 100%;
+    }
+    
+}
+
+
+/* Hide small version on large screens */
+@media (min-width: 322px) {
+    .carbtn {
+        display: none;
+    }
+}
+
+/* Make buttons stack vertically for small screens (320px) */
+@media (max-width: 320px) {
+    .carbigbtn {
+        display: none;
+    }
+    .carbtn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carbtn button {
+        width: 100%;
+        margin-bottom: 5px;
+        border-radius: 20px; /* Curved edges */
+        padding: 10px;
+    }
+}
     </style>
     
   </head>
   <body>
 
-    <div class="main-menu" >
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #B71C1C;">
-          <div class="container-fluid">
-              <a class="navbar-brand text-white" href="#">Address Locator</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav1">
-                  <ol class="navbar-nav ms-auto" style="z-index: 4;">
-                      <li class="nav-item">
-                          <span class="nav-link text-white">Call Us: 1-888-999-00</span>
-                      </li>
+  <!-- Address Locator Navbar -->
+  <div class="main-menus d-none d-lg-block" style="background-color: #B71C1C;">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Address Locator</a>
+            <div class="collapse navbar-collapse" id="navbarNav1">
+                <ul class="navbar-nav ms-auto d-flex align-items-center">
+                    <li class="nav-item">
+                        <span class="nav-link text-white">Call Us: 1-888-999-00</span>
+                    </li>
                   
-                      <li class="nav-item dropdown">
-                          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                              <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4311 12.759C15.417 11.4291 16 9.78265 16 8C16 3.58169 12.4182 0 8 0C3.58169 0 0 3.58169 0 8C0 12.4182 3.58169 16 8 16C10.3181 16 12.4058 15.0141 13.867 13.4387C14.0673 13.2226 14.2556 12.9957 14.4311 12.759ZM13.9875 12C14.7533 10.8559 15.1999 9.48009 15.1999 8C15.1999 4.02355 11.9764 0.799983 7.99991 0.799983C4.02355 0.799983 0.799983 4.02355 0.799983 8C0.799983 9.48017 1.24658 10.8559 2.01245 12C2.97866 10.5566 4.45301 9.48194 6.17961 9.03214C5.34594 8.45444 4.79998 7.49102 4.79998 6.39995C4.79998 4.63266 6.23271 3.19993 8 3.19993C9.76729 3.19993 11.2 4.63266 11.2 6.39995C11.2 7.49093 10.654 8.45444 9.82039 9.03206C11.5469 9.48194 13.0213 10.5565 13.9875 12ZM13.4722 12.6793C12.3495 10.8331 10.3188 9.59997 8.00008 9.59997C5.68126 9.59997 3.65049 10.8331 2.52776 12.6794C3.84829 14.2222 5.80992 15.2 8 15.2C10.1901 15.2 12.1517 14.2222 13.4722 12.6793ZM8 8.79998C9.32551 8.79998 10.4 7.72554 10.4 6.39995C10.4 5.07444 9.32559 3.99992 8 3.99992C6.6744 3.99992 5.59997 5.07452 5.59997 6.40003C5.59997 7.72554 6.67449 8.79998 8 8.79998Z" />
-                              </svg>
-                          </button>
-                          <!-- Ensuring the dropdown is aligned to the right -->
-                          <ol class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                              <li><a class="dropdown-item" href="myaccount.html">My Account</a></li>
-                              <li><a class="dropdown-item" href="appointments.html">Appointments</a></li>
-                              <li><a class="dropdown-item" href="orders.html">Orders</a></li>
-                              <li><a class="dropdown-item" href="savedcars.html">Saved Cars</a></li>
-                              <li><a class="dropdown-item" href="sell.html">Bidding</a></li>
-                              <li><a class="dropdown-item" href="#">Logout</a></li>
-                          </ol>
-                      </li>
-                  </ol>
-              </div>
-          </div>
-      </nav>
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="myaccount.html">My Account</a></li>
+                            <li><a class="dropdown-item" href="appointments.html">Appointments</a></li>
+                            <li><a class="dropdown-item" href="orders.html">Orders</a></li>
+                            <li><a class="dropdown-item" href="savedcars.html">Saved Cars</a></li>
+                            <li><a class="dropdown-item" href="sell.html">Bidding</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
   </div>
-<!-- Header Section -->
+  
+  <!-- CARGURU Navbar -->
+  <div class="main-menu custom-navbar" style="background-color: #FFC107;">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CARGURU</a>
+            <button class="btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNav">
+                <ul class="navbar-nav custom-nav">
+                    <li class="nav-item custom-nav-item">
+                        <a class="nav-link active" href="#">I want to Buy a Car</a>
+                    </li>
+                    <li class="nav-item custom-nav-item"><a class="nav-link" href="#">I want to Sell a Car</a></li>
+                    <li class="nav-item custom-nav-item"><a class="nav-link" href="#">Other Services</a></li>
+                    <li class="nav-item custom-nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item custom-nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </div>
+  
+  <!-- Mobile Sidebar (Offcanvas) -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">CARGURU</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <hr>
+    <div class="offcanvas-body">
+  
+        <!-- CARGURU Items -->
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">I want to Buy a Car</a></li>
+            <hr>
+            <li class="nav-item"><a class="nav-link" href="#">I want to Sell a Car</a></li>
+            <hr>
+            <li class="nav-item"><a class="nav-link" href="#">Other Services</a></li>
+            <hr>
+            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+            <hr>
+            <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+        </ul>
+  
+        <hr>
+  
+        <!-- Address Locator Items -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <span class="nav-link text-dark">Call Us: 1-888-999-00</span>
+            </li>
+        
+         
+            <li class="nav-item dropdown mb-2">
+                <button class="btn w-100" type="button" data-bs-toggle="collapse" data-bs-target="#userMenuCollapse" aria-expanded="false" aria-controls="userMenuCollapse">
+                    <i class="bi bi-person-circle"></i>
+                </button>
+                <div class="collapse user-menu-box" id="userMenuCollapse">
+                    <ul class="list-unstyled">
+                        <li><a class="dropdown-item" href="myaccount.html">My Account</a></li>
+                        <li><a class="dropdown-item" href="appointments.html">Appointments</a></li>
+                        <li><a class="dropdown-item" href="orders.html">Orders</a></li>
+                        <li><a class="dropdown-item" href="savedcars.html">Saved Cars</a></li>
+                        <li><a class="dropdown-item" href="sell.html">Bidding</a></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </li>
+            
+        </ul>
+  
+    </div>
+  </div>
 
-<div class="main-menu" style="background-color: #FFC107;">
-  <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container-fluid">
-          <a class="navbar-brand" href="#">CARGURU</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                  <li id="buy_a_car" class="nav-item active">
-                      <a class="nav-link navcar" href="#">I want to Buy a Car</a>
-                  </li>
-                  <li id="sell_a_car" class="nav-item">
-                      <a class="nav-link navcar" href="#">I want to Sell a Car</a>
-                  </li>
-                  <li id="other_services" class="nav-item">
-                      <a class="nav-link navcar" href="#">Other Services</a>
-                  </li>
-                  <li id="about_us" class="nav-item">
-                      <a class="nav-link navcar" href="#">About Us</a>
-                  </li>
-                  <li id="contact_us" class="nav-item">
-                      <a class="nav-link navcar" href="#">Contact Us</a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </nav>
-</div>
+
+
+<div class="container mt-4">
 
 <!-- Sticky Bar -->
-<div id="sticky-bar" class="sticky-bar" style="display: none; background-color: #FFC107; position: fixed; bottom: 0; width: 100%; padding: 10px 0; z-index: 9999;">
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="row">
-                <b class="text-center" style="font-size: 20px;">2015 Honda HR-V i-VTEC S 1.8</b>
-            </div>
+<div id="sticky-bar" class="sticky-bar" style="display: none;">
+    <div class="row text-center">
+        <!-- Car Name -->
+        <div class="col-lg-3 col-12">
+            <b style="font-size: 18px;">2015 Honda HR-V i-VTEC S 1.8</b>
         </div>
-        <div class="col-lg-3">
-            <!-- Price and Strikethrough Price -->
-            <div class="row justify-content-between align-items-center">
-                <div class="col text-center" style="font-size: 20px;">
-                    <b>RM 94,000</b>
-                </div>
-                <div class="col text-center">
-                    <b class="text-secondary text-decoration-line-through">RM 104,000</b>
-                </div>
-            </div>
-            
-            <!-- Monthly Payment -->
-            <div class="row">
-                <b class="text-center">RM 1,038/month</b>
-            </div>
-        </div>
-        
-        <div class="col-lg-3">
-            <div class="row">
-                <b class="text-center">Book this car</b>
 
+        <!-- Price and Monthly Payment -->
+        <div class="col-lg-3 col-12">
+            <div class="d-flex justify-content-center align-items-center flex-wrap">
+                <b style="font-size: 18px;">RM 94,000</b>
+                <b class="text-secondary text-decoration-line-through ms-2">RM 104,000</b>
             </div>
-            <div class="row">
-                <b class="text-center">100% refundable</b>
-
-            </div>
+            <b>RM 1,038/month</b>
         </div>
-        <div class="col-lg-3">
-            <div class="row">
-                <b class="text-center">Book for test drive</b>
-            </div>
-            <div class="row">
-                <b class="text-center">Submit for loan approval first</b>
-            </div>
+
+        <!-- Booking Info -->
+        <div class="col-lg-3 col-12">
+            <b>Book this car</b>
+            <b class="d-block">100% refundable</b>
+        </div>
+
+        <!-- Test Drive & Loan -->
+        <div class="col-lg-3 col-12">
+            <b>Book for test drive</b>
+            <b class="d-block">Submit for loan approval first</b>
         </div>
     </div>
 </div>
 
-
-<div class="container mt-4">
     <div class="row g-3">
         <!-- Image Section -->
         <div class="col-lg-7 col-md-12">
-            <div class="card shadow-sm position-relative" style="height: 450px;">
+            <div class="card shadow-sm position-relative" style="height: 480px;">
                 <div id="carouselExample" class="carousel slide h-100">
                     <div class="carousel-inner h-100">
                         <div class="carousel-item active h-100">
@@ -441,8 +688,8 @@
         </div>
 
         <!-- Car Details Section -->
-        <div class="col-lg-5 col-md-12">
-            <div class="card shadow-sm p-3" style="height: 450px;">
+        <div class="col-lg-5 col-md-12 car-details">
+            <div class="card shadow-sm p-3 car-card-details" >
                 <div class="d-flex justify-content-start align-items-center gap-3">
                     <i class="bi bi-heart fs-4 text-danger p-2 bg-light rounded-circle shadow-sm" style="cursor: pointer; transition: all 0.3s;"></i>
                     <i class="bi bi-share-fill fs-4 text-secondary p-2 bg-light rounded-circle shadow-sm" style="cursor: pointer; transition: all 0.3s;"></i>
@@ -467,15 +714,15 @@
                 <p><strong>RM 1,876 / month</strong> <small>(9 Years Later)</small></p>
                 <br>
                 <!-- Action Buttons -->
-                <div class="d-grid gap-2">
+                <div class="d-grid ">
                     <div class="row text-center align-items-center g-2">
                         <div class="col-lg-4">
-                            <button class="btn btn-warning ">Book this Car</button>
+                            <button class="btn btn-warning bookthiscar">Book this Car</button>
                         </div>
                         <div class="col-lg-6">
                             <button class="btn btn-warning" style="width: 100%;">Book for Test Drive</button>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-2 mb-2">
                             <a  class="btn btn-outline-warning ">
                                 <i class="bi bi-telephone-plus-fill"></i>
                             </a>
@@ -487,8 +734,11 @@
             </div>
         </div>
     </div>
+
     <br>
-    <div class="row">
+
+
+    <div class="row car-images">
         <div class="col-md-4">
             <div class="card">
                 <img src="https://b2c-cdn.carsome.my/cdn-cgi/image/format=auto,quality=50,width=1296/B2C/c821d037-93c0-4c8c-83e8-872bf41dc09b.jpg" 
@@ -600,50 +850,68 @@
 
 
 <br>
+
 <div class="row">
     <div class="col">
-<b>Inspection Report</b>
-<p>Every carguru certified cars undergoes a rigorous 200 Vehicle Inspection Points, ensuring it is meticulously
-    selected and certified to be free from flood, fine and significant accident damage.
-</p>
-<div class="tabs">
-    <div class="tab active">VEHICLE HISTORY (2)</div>
-    <div class="tab">ROAD TEST (1)</div>
-    <div class="tab">VEHICLE EXTERIOR (8)</div>
-    <div class="tab">VEHICLE INTERIOR (9)</div>
-    <div class="tab">VEHICLE DIAGNOSTICS (3)</div>
-    <div class="tab">UNDERHOOD (4)</div>
-    <div class="tab">HYBRID (0)</div>
-    <div class="tab">UNDERBODY (0)</div>
+        <b>Inspection Report</b>
+        <p>Every Carguru Certified Car undergoes a rigorous 200 Vehicle Inspection Points, ensuring it is meticulously
+            selected and certified to be free from flood, fine, and significant accident damage.</p>
+
+        <!-- Scrollable Tabs -->
+        <div class="tabs">
+            <div class="tab active">VEHICLE HISTORY (2)</div>
+            <div class="tab">ROAD TEST (1)</div>
+            <div class="tab">VEHICLE EXTERIOR (8)</div>
+            <div class="tab">VEHICLE INTERIOR (9)</div>
+            <div class="tab">VEHICLE DIAGNOSTICS (3)</div>
+            <div class="tab">UNDERHOOD (4)</div>
+            <div class="tab">HYBRID (0)</div>
+            <div class="tab">UNDERBODY (0)</div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <ul class="checklist">
+                <li class="ruled-line">Engine # Inspection
+                    <span class="check-icon">
+                        <img src="assets/img/bannerimages/circle.png" alt="Check" style="max-width: 15px;">
+                    </span>
+                </li>
+                <li class="ruled-line">Vehicle History Report Obtained
+                    <span class="check-icon">
+                        <img src="assets/img/bannerimages/circle.png" alt="Check" style="max-width: 15px;">
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 
-<div class="content">
-    <ul class="checklist">
-        <li class="ruled-line">Engine # Inspection 
-            <span class="check-icon">
-                <img src="assets/img/bannerimages/circle.png" class="me-2" alt="" style="max-width:15px">
-            </span>
-        </li>
-        <li class="ruled-line">Vehicle History Report Obtained 
-            <span class="check-icon">
-                <img src="assets/img/bannerimages/circle.png" class="me-2" alt="" style="max-width:15px">
-            </span>
-        </li>
-    </ul>
-</div>
-</div>
-</div>
+
+
 <br>
 <div class="row">
     <div class="col">
         <b>More About This Car</b>
         <br>
-        <div class="row d-flex  mt-3">
-            <div class="col-auto">
-                <div class="btn-group" role="group" aria-label="Car Info Buttons">
-                    <button type="button" class="btn btn-outline-primary " id="carDetailsBtn">Car Details</button>
-                    <button type="button" class="btn btn-outline-primary" id="specificationsBtn">Specifications</button>
-                    <button type="button" class="btn btn-outline-primary actives" id="equipmentBtn">Equipment</button>
+        <!-- large device show this -->
+        <div class="row d-flex mt-3">
+            <div class="col-auto carbigbtn">
+                <div class="btn-group d-flex flex-wrap" role="group" aria-label="Car Info Buttons">
+                    <button type="button" class="btn btn-outline-primary flex-fill car-details-btn" id="carDetailsBtn">Car Details</button>
+                    <button type="button" class="btn btn-outline-primary flex-fill specifications-btn" id="specificationsBtn">Specifications</button>
+                    <button type="button" class="btn btn-outline-primary flex-fill equipment-btn actives" id="equipmentBtn">Equipment</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- small device show this -->
+        <div class="row d-flex mt-3">
+            <div class="col-12 carbtn">
+                <div aria-label="Car Info Buttons">
+                    <button type="button" class="btn btn-outline-primary flex-fill car-details-btn" id="carDetailsBtn">Car Details</button>
+                    <button type="button" class="btn btn-outline-primary flex-fill specifications-btn" id="specificationsBtn">Specifications</button>
+                    <button type="button" class="btn btn-outline-primary flex-fill equipment-btn actives" id="equipmentBtn">Equipment</button>
                 </div>
             </div>
         </div>
@@ -691,7 +959,7 @@
         <!-- Down Payment Slider Section -->
         <div class="col-lg-9 col-md-6">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 mb-4">
                     <div class="card" style="background-color: lightgrey;">
                         <div class="card-body">
                             <label for="customRange1" class="form-label">Down Payment RM 9,490</label>
@@ -775,10 +1043,10 @@
             <div class="row">
                 <!-- Coverage Type Dropdown -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="card">
+                    <div class="card mb-3">
                         <div class="card-body">
-                            <label for="coverageType">Coverage Type</label>
-                            <select name="coverageType" id="coverageType">
+                            <label class="form-label" for="coverageType">Coverage Type</label>
+                            <select class="form-control" name="coverageType" id="coverageType">
                                 <option value="comprehensive">Comprehensive</option>
                                 <!-- You can add more options here if needed -->
                             </select>
@@ -788,10 +1056,10 @@
             
                 <!-- No Claim Discount Dropdown -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="card">
+                    <div class="card mb-3">
                         <div class="card-body">
-                            <label for="noClaimDiscount">No Claim Discount</label>
-                            <select name="noClaimDiscount" id="noClaimDiscount">
+                            <label class="form-label" for="noClaimDiscount">No Claim Discount</label>
+                            <select class="form-control" name="noClaimDiscount" id="noClaimDiscount">
                                 <option value="secondYear33">Second Year - 33%</option>
                                 <!-- You can add more options here if needed -->
                             </select>
@@ -801,7 +1069,7 @@
             
                 <!-- Yearly Insurance Payment Card -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="card" style="background-color: #ffc107;">
+                    <div class="card mb-3" style="background-color: #ffc107;">
                         <div class="card-body">
                             <b>Yearly Insurance Payment</b>
                             <br>
@@ -819,10 +1087,10 @@
             <b>Road Tax</b>
             <div class="row">
                 <div class="col-lg-4 col-md-4">
-                    <div class="card">
+                    <div class="card mb-3">
                         <div class="card-body">
-                            <label for="coverageType">Coverage Type</label>
-                            <select name="coverageType" id="coverageType">
+                            <label class="form-label" for="coverageType">Coverage Type</label>
+                            <select class="form-control" name="coverageType" id="coverageType">
                                 <option value="comprehensive">Saloon Cars /  Company Owned</option>
                                 <!-- You can add more options here if needed -->
                             </select>
@@ -914,7 +1182,7 @@
     <!-- WOW JS -->
     <script src="assets/js/wow.min.js"></script>
     <!-- Counterup JS -->
-    <script src="assets/js/jquery.counterup.min.js"></script>
+    <!-- <script src="assets/js/jquery.counterup.min.js"></script> -->
     <!-- Isotope  JS -->
     <script src="assets/js/isotope.pkgd.min.js"></script>
     <!-- Magnific-popup  JS -->
@@ -1072,16 +1340,24 @@ paymentBtn.addEventListener('click', function() {
     // Set the initial value of the text input to match the default slider value (10%)
     document.getElementById('percentage3').value = document.getElementById('customRange3').value;
 </script>
+<!-- JavaScript for Sticky Bar -->
 <script>
-    // JavaScript to show sticky bar when scrolling down
-window.addEventListener('scroll', function() {
-    let stickyBar = document.getElementById('sticky-bar');
-    if (window.scrollY > 600) { // Change 100 to the scroll position you prefer
-        stickyBar.style.display = 'block';
-    } else {
-        stickyBar.style.display = 'none';
-    }
-});
+    document.addEventListener("DOMContentLoaded", function () {
+        let stickyBar = document.getElementById("sticky-bar");
+        let lastScrollTop = 0;
+
+        window.addEventListener("scroll", function () {
+            let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+            if (scrollTop > 600) {
+                stickyBar.style.display = "block";
+            } else {
+                stickyBar.style.display = "none";
+            }
+
+            lastScrollTop = scrollTop;
+        });
+    });
 </script>
 <script>
     const carousel = document.querySelector('#carouselExample');
@@ -1091,6 +1367,19 @@ window.addEventListener('scroll', function() {
     carousel.addEventListener('slid.bs.carousel', function (e) {
         const currentIndex = [...items].indexOf(e.relatedTarget) + 1;
         indicator.textContent = `${currentIndex} / ${items.length}`;
+    });
+</script>
+<script>
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+            // Remove 'active' class from all links
+            document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
+                link.classList.remove('active');
+            });
+    
+            // Add 'active' class to the clicked link
+            this.classList.add('active');
+        });
     });
 </script>
 </html>
