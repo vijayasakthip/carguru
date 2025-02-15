@@ -56,11 +56,6 @@
         background-color: #d32f2f;
         height: 50px;
       }
-      .navbar {
-        background-color: #ffc107;
-        display: flex;
-        align-items: center;
-      }
      
       .sidebar {
         background-color: white;
@@ -132,25 +127,6 @@
   color: white !important; 
 }
 
-.main-menu ul > li.active > a {
-    color: white;
-    }
-    .main-menu ul > li:hover > a {
-    color: white;
-    }   
-.main-menu ul > li a {
-    color: var(--title-color);
-    display: block;
-    text-transform: capitalize;
-    padding: 15px 20px;
-    position: relative;
-    font-family: var(--font-montserrat);
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 13px;
-    position: relative;
-}
-
 .selected {
       background-color: #B71C1C;
       color: white;
@@ -159,11 +135,86 @@
     color: white !important; /* White text color on hover */
 }
 
-/* Active state styles */
-.main-menu ul > li.active > a {
-    color: white !important; /* White text color for active item */
-    background-color: #dc3545 !important; /* Red background for active item */
+/* Default state for nav-link */
+.navbar-nav .nav-link {
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for the link */
+    transition: all 0.3s ease; /* Smooth transition for hover and active states */
 }
+
+/* Hover effect */
+.navbar-nav .nav-link:hover {
+    background-color: #B71C1C; /* Red background */
+    color: white!important; /* White text */
+}
+
+/* Active state when clicked */
+.navbar-nav .nav-link.active {
+    background-color: #B71C1C; /* Red background */
+    color: white!important; /* White text */
+}
+/* Add space between the navbar items with a custom class */
+.custom-nav .custom-nav-item {
+    margin-right: 30px; /* Adds space between the items */
+}
+
+/* Optional: Add space on the left side of the navbar with a custom class */
+.custom-navbar .container-fluid {
+    padding-left: 20px; /* Adds space to the left side */
+}
+
+/* Optional: Make sure the items are aligned to the left with a custom class */
+.custom-navbar .navbar-nav {
+    display: flex;
+    justify-content: flex-start; /* Aligns the items to the left */
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Reduce the overall height of the navbar */
+.main-menus .navbar {
+    padding-top: 5px;  /* Adjust the top padding */
+    padding-bottom: 5px;  /* Adjust the bottom padding */
+}
+
+/* Reduce the height of navbar items (links) */
+.main-menus .navbar-nav .nav-item {
+    padding-top: 0px;  /* Remove top padding */
+    padding-bottom: 0px;  /* Remove bottom padding */
+}
+
+/* Reduce the padding of buttons inside navbar */
+.main-menus .navbar-nav .btn {
+    padding-top: 5px;  /* Adjust the top padding of buttons */
+    padding-bottom: 5px;  /* Adjust the bottom padding of buttons */
+}
+
+/* Adjust the size of the brand logo text */
+.main-menus .navbar-brand {
+    font-size: 1.2rem;  /* Reduce font size of brand text */
+    padding-top: 5px;  /* Optional: Adjust the top padding */
+    padding-bottom: 5px;  /* Optional: Adjust the bottom padding */
+}
+
+/* Reduce the height of dropdown button */
+.main-menus .navbar-nav .dropdown-toggle {
+    padding-top: 5px;  /* Reduce top padding */
+    padding-bottom: 5px;  /* Reduce bottom padding */
+}
+
+/* Optional: Adjust the padding of the navbar links (like Call Us) */
+.main-menus .navbar-nav .nav-link {
+    padding-top: 5px;  /* Adjust the top padding of nav links */
+    padding-bottom: 5px;  /* Adjust the bottom padding of nav links */
+}
+/* Style the dropdown wrapper */
+.user-menu-box {
+    border: 2px solid #B71C1C; /* Golden border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Add some padding inside the box */
+    background-color: white; /* White background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow */
+}
+
     </style>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -181,71 +232,110 @@
   </head>
   <body>
 
-    <div class="main-menu" >
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #B71C1C;">
-          <div class="container-fluid">
-              <a class="navbar-brand text-white" href="#">Address Locator</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav1">
-                  <ol class="navbar-nav ms-auto" style="z-index: 4;">
-                      <li class="nav-item">
-                          <span class="nav-link text-white">Call Us: 1-888-999-00</span>
-                      </li>
-                      
-                      <li class="nav-item dropdown">
-                          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                              <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4311 12.759C15.417 11.4291 16 9.78265 16 8C16 3.58169 12.4182 0 8 0C3.58169 0 0 3.58169 0 8C0 12.4182 3.58169 16 8 16C10.3181 16 12.4058 15.0141 13.867 13.4387C14.0673 13.2226 14.2556 12.9957 14.4311 12.759ZM13.9875 12C14.7533 10.8559 15.1999 9.48009 15.1999 8C15.1999 4.02355 11.9764 0.799983 7.99991 0.799983C4.02355 0.799983 0.799983 4.02355 0.799983 8C0.799983 9.48017 1.24658 10.8559 2.01245 12C2.97866 10.5566 4.45301 9.48194 6.17961 9.03214C5.34594 8.45444 4.79998 7.49102 4.79998 6.39995C4.79998 4.63266 6.23271 3.19993 8 3.19993C9.76729 3.19993 11.2 4.63266 11.2 6.39995C11.2 7.49093 10.654 8.45444 9.82039 9.03206C11.5469 9.48194 13.0213 10.5565 13.9875 12ZM13.4722 12.6793C12.3495 10.8331 10.3188 9.59997 8.00008 9.59997C5.68126 9.59997 3.65049 10.8331 2.52776 12.6794C3.84829 14.2222 5.80992 15.2 8 15.2C10.1901 15.2 12.1517 14.2222 13.4722 12.6793ZM8 8.79998C9.32551 8.79998 10.4 7.72554 10.4 6.39995C10.4 5.07444 9.32559 3.99992 8 3.99992C6.6744 3.99992 5.59997 5.07452 5.59997 6.40003C5.59997 7.72554 6.67449 8.79998 8 8.79998Z" />
-                              </svg>
-                          </button>
-                          <!-- Ensuring the dropdown is aligned to the right -->
-                          <ol class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                              <li><a class="dropdown-item" href="myaccount.html">My Account</a></li>
-                              <li><a class="dropdown-item" href="appointments.html">Appointments</a></li>
-                              <li><a class="dropdown-item" href="orders.html">Orders</a></li>
-                              <li><a class="dropdown-item" href="savedcars.html">Saved Cars</a></li>
-                              <li><a class="dropdown-item" href="sell.html">Bidding</a></li>
-                              <li><a class="dropdown-item" href="#">Logout</a></li>
-                          </ol>
-                      </li>
-                  </ol>
-              </div>
-          </div>
-      </nav>
+   <!-- Address Locator Navbar -->
+  <div class="main-menus d-none d-lg-block" style="background-color: #B71C1C;">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Address Locator</a>
+            <div class="collapse navbar-collapse" id="navbarNav1">
+                <ul class="navbar-nav ms-auto d-flex align-items-center">
+                    <li class="nav-item">
+                        <span class="nav-link text-white">Call Us: 1-888-999-00</span>
+                    </li>
+                   
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="myaccount.html">My Account</a></li>
+                            <li><a class="dropdown-item" href="appointments.html">Appointments</a></li>
+                            <li><a class="dropdown-item" href="orders.html">Orders</a></li>
+                            <li><a class="dropdown-item" href="savedcars.html">Saved Cars</a></li>
+                            <li><a class="dropdown-item" href="sell.html">Bidding</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
   </div>
-
-<!-- Header Section -->
-<div class="main-menu" style="background-color: #FFC107;">
-  <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container-fluid">
-          <a class="navbar-brand" href="#">CARGURU</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                  <li id="buy_a_car" class="nav-item active">
-                      <a class="nav-link navcar" href="#">I want to Buy a Car</a>
-                  </li>
-                  <li id="sell_a_car" class="nav-item">
-                      <a class="nav-link navcar" href="#">I want to Sell a Car</a>
-                  </li>
-                  <li id="other_services" class="nav-item">
-                      <a class="nav-link navcar" href="#">Other Services</a>
-                  </li>
-                  <li id="about_us" class="nav-item">
-                      <a class="nav-link navcar" href="#">About Us</a>
-                  </li>
-                  <li id="contact_us" class="nav-item">
-                      <a class="nav-link navcar" href="#">Contact Us</a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </nav>
-</div>
+  
+  <!-- CARGURU Navbar -->
+  <div class="main-menu custom-navbar" style="background-color: #FFC107;">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CARGURU</a>
+            <button class="btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNav">
+                <ul class="navbar-nav custom-nav">
+                    <li class="nav-item custom-nav-item">
+                        <a class="nav-link active" href="#">I want to Buy a Car</a>
+                    </li>
+                    <li class="nav-item custom-nav-item"><a class="nav-link" href="#">I want to Sell a Car</a></li>
+                    <li class="nav-item custom-nav-item"><a class="nav-link" href="#">Other Services</a></li>
+                    <li class="nav-item custom-nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item custom-nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </div>
+  
+  <!-- Mobile Sidebar (Offcanvas) -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">CARGURU</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <hr>
+    <div class="offcanvas-body">
+  
+        <!-- CARGURU Items -->
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">I want to Buy a Car</a></li>
+            <hr>
+            <li class="nav-item"><a class="nav-link" href="#">I want to Sell a Car</a></li>
+            <hr>
+            <li class="nav-item"><a class="nav-link" href="#">Other Services</a></li>
+            <hr>
+            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+            <hr>
+            <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+        </ul>
+  
+        <hr>
+  
+        <!-- Address Locator Items -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <span class="nav-link text-dark">Call Us: 1-888-999-00</span>
+            </li>
+           
+         
+            <li class="nav-item dropdown mb-2">
+                <button class="btn w-100" type="button" data-bs-toggle="collapse" data-bs-target="#userMenuCollapse" aria-expanded="false" aria-controls="userMenuCollapse">
+                    <i class="bi bi-person-circle"></i>
+                </button>
+                <div class="collapse user-menu-box" id="userMenuCollapse">
+                    <ul class="list-unstyled">
+                        <li><a class="dropdown-item" href="myaccount.html">My Account</a></li>
+                        <li><a class="dropdown-item" href="appointments.html">Appointments</a></li>
+                        <li><a class="dropdown-item" href="orders.html">Orders</a></li>
+                        <li><a class="dropdown-item" href="savedcars.html">Saved Cars</a></li>
+                        <li><a class="dropdown-item" href="sell.html">Bidding</a></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </li>
+            
+        </ul>
+  
+    </div>
+  </div>
 
 
 
@@ -368,7 +458,7 @@
    <!-- WOW JS -->
    <script src="assets/js/wow.min.js"></script>
    <!-- Counterup JS -->
-   <script src="assets/js/jquery.counterup.min.js"></script>
+   <!-- <script src="assets/js/jquery.counterup.min.js"></script> -->
    <!-- Isotope  JS -->
    <script src="assets/js/isotope.pkgd.min.js"></script>
    <!-- Magnific-popup  JS -->
@@ -449,4 +539,17 @@
         toggleActiveClass(contactUs);
     });
     </script>
+    <script>
+      document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
+          link.addEventListener('click', function() {
+              // Remove 'active' class from all links
+              document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
+                  link.classList.remove('active');
+              });
+      
+              // Add 'active' class to the clicked link
+              this.classList.add('active');
+          });
+      });
+      </script>
 </html>
